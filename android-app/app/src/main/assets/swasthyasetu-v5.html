@@ -28,7 +28,7 @@ input,select,textarea{width:100%;padding:10px;margin:4px 0 8px;border:1px solid 
 input:focus,select:focus,textarea:focus{outline:3px solid color-mix(in srgb,var(--pr) 22%,transparent);border-color:var(--pr)}
 .row{display:flex;gap:8px}.row>*{flex:1}
 .btn{background:var(--pr);color:var(--pt);border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:650;width:100%;cursor:pointer;box-shadow:0 3px 9px color-mix(in srgb,var(--pr) 20%,transparent);transition:filter .16s,transform .16s}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn:active{transform:translateY(0)}.btn.s{width:auto;padding:7px 12px;font-size:.85em;margin:4px 4px 0 0}.btn.o{background:var(--card);color:var(--pr);border:1px solid var(--pr);box-shadow:none}
-.t{display:inline-block;border-radius:10px;padding:2px 10px;font-size:.78em;font-weight:700}.t.red{background:var(--rb);color:var(--red)}.t.amber{background:var(--ab);color:var(--am)}.t.green{background:var(--gb);color:var(--gr)}
+.t{display:inline-block;border-radius:10px;padding:2px 10px;font-size:.78em;font-weight:700}.t.red{background:var(--rb);color:var(--red)}.t.yellow,.t.amber{background:var(--ab);color:var(--am)}.t.green{background:var(--gb);color:var(--gr)}
 .alert{background:var(--rb);border:2px solid var(--red);border-radius:12px;padding:10px;margin:8px 0}
 .bar{height:10px;border-radius:5px;background:var(--pr);margin:2px 0 6px}
 .sync{background:var(--ab);border-radius:10px;padding:7px 10px;font-size:.85em}
@@ -86,7 +86,7 @@ body.auth-required>#authGate{display:flex}
 <div class="alert" style="margin-top:12px"><b>Demo only — not secure authentication.</b> The shared code is 123456 and anyone who knows it can open this app. The name and phone number are not verified. Do not enter real patient information or use this build for real care.</div>
 </div></section>
 <header><select id="lg" aria-label="Language" style="margin:0">
-<option value="en">English</option><option value="as">অসমীয়া</option><option value="bn">বাংলা</option><option value="brx">बड़ो</option><option value="doi">डोगरी</option><option value="gu">ગુજરાતી</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option><option value="ks">کٲشُر</option><option value="kok">कोंकणी</option><option value="mai">मैथिली</option><option value="ml">മലയാളം</option><option value="mni">মেইতেই লোন</option><option value="mr">मराठी</option><option value="ne">नेपाली</option><option value="or">ଓଡ଼ିଆ</option><option value="pa">ਪੰਜਾਬੀ</option><option value="sa">संस्कृतम्</option><option value="sat">ᱥᱟᱱᱛᱟᱲᱤ</option><option value="sd">سنڌي</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="ur">اردو</option></select><h1>🩺 SwasthyaSetu</h1><details id="userMenu"><summary id="userLabel" data-i18n="User" data-i18n-prefix="👤 ">👤 User</summary><div id="userPanel"><h2>👤 <span data-i18n="About you">About you</span></h2><div class="mu" data-i18n="Profile privacy">Saved on this device only; not shared with the doctor.</div><label class="mu" for="userName" data-i18n="Name">Name</label><input id="userName" maxlength="60" autocomplete="name" placeholder="Your name" data-i18n-placeholder="Your name"><label class="mu" for="userPhone" data-i18n="Phone number">Phone number</label><input id="userPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Your phone number" data-i18n-placeholder="Your phone number"><button class="btn s" id="saveUser" type="button" data-i18n="Save profile">Save profile</button><div id="userMessage" class="mu" role="status"></div><div class="user-options"><b data-i18n="More options">More options</b><button type="button" data-user-go="mch">🤰 <span data-i18n="Mother &amp; child">Mother &amp; child</span></button><button type="button" data-user-go="chr">❤️ <span data-i18n="Chronic care">Chronic care</span></button><button type="button" data-user-go="sch">🏛 <span data-i18n="Schemes">Schemes</span></button></div></div></details><button id="authSignOut" type="button" hidden>Sign out</button><span id="sig" role="status" aria-live="polite">Checking network…</span><button id="bluetoothNav" type="button">Bluetooth</button><button id="big">Aa+</button></header>
+<option value="en">English</option><option value="as">অসমীয়া</option><option value="bn">বাংলা</option><option value="brx">बड़ो</option><option value="doi">डोगरी</option><option value="gu">ગુજરાતી</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option><option value="ks">کٲشُر</option><option value="kok">कोंकणी</option><option value="mai">मैथिली</option><option value="ml">മലയാളം</option><option value="mni">মেইতেই লোন</option><option value="mr">मराठी</option><option value="ne">नेपाली</option><option value="or">ଓଡ଼ିଆ</option><option value="pa">ਪੰਜਾਬੀ</option><option value="sa">संस्कृतम्</option><option value="sat">ᱥᱟᱱᱛᱟᱲᱤ</option><option value="sd">سنڌي</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="ur">اردو</option></select><h1>🩺 SwasthyaSetu</h1><details id="userMenu"><summary id="userLabel" data-i18n="User" data-i18n-prefix="👤 ">👤 User</summary><div id="userPanel"><h2>👤 <span data-i18n="About you">About you</span></h2><div class="mu" data-i18n="Profile privacy">Saved on this device only; not shared with the doctor.</div><label class="mu" for="userName" data-i18n="Name">Name</label><input id="userName" maxlength="60" autocomplete="name" placeholder="Your name" data-i18n-placeholder="Your name"><label class="mu" for="userPhone" data-i18n="Phone number">Phone number</label><input id="userPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Your phone number" data-i18n-placeholder="Your phone number"><button class="btn s" id="saveUser" type="button" data-i18n="Save profile">Save profile</button><div id="userMessage" class="mu" role="status"></div><div class="user-options"><b data-i18n="More options">More options</b><button type="button" data-user-go="mch">🤰 <span data-i18n="Mother &amp; child">Mother &amp; child</span></button><button type="button" data-user-go="chr">❤️ <span data-i18n="Chronic care">Chronic care</span></button><button type="button" data-user-go="sch">🏛 <span data-i18n="Schemes">Schemes</span></button></div><div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--bd)"><button type="button" id="userSignOut" class="btn s o" style="width:100%;color:var(--red);border-color:var(--red);display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600"><span>🚪</span> <span data-i18n="Sign out">Sign out</span></button></div></div></details><button id="authSignOut" type="button" hidden>Sign out</button><span id="sig" role="status" aria-live="polite">Checking network…</span><button id="bluetoothNav" type="button">Bluetooth</button><button id="big">Aa+</button></header>
 <main><div id="sync" class="sync" role="status"></div><div id="alertbar"></div>
 <section id="t-asha-home"><h2>🧑‍⚕️ ASHA worker dashboard</h2><p class="mu">Choose a field-work task. Your saved cases and household visits stay available in their sections.</p>
 <div class="card"><h3>Patient care</h3><button class="btn s" type="button" data-asha-go="asha">📝 Record a case</button><button class="btn s o" type="button" data-asha-go="hh">🏠 Household visit</button><button class="btn s o" type="button" data-asha-go="sym">🤒 Symptom guidance</button></div>
@@ -98,12 +98,12 @@ body.auth-required>#authGate{display:flex}
 <div class="card"><div class="row"><div><label class="mu">Patient name</label><input id="n" maxlength="50"></div><div><label class="mu">Age</label><input id="a" type="number" inputmode="numeric"></div></div>
 <div class="row"><div><label class="mu">Village</label><select id="v"><option>Kotra</option><option>Rampur</option><option>Dhanipali</option><option>Jamda</option></select></div><div><label class="mu">Temp (°C)</label><input id="tp" type="number" step="0.1" inputmode="decimal"></div></div>
 <div class="mu">Symptoms</div><div id="sy"></div><div class="mu">Danger signs</div><div id="dg"></div>
-<label class="mu">Notes</label><textarea id="nt" rows="2" maxlength="400"></textarea><button class="btn s o" id="mic" type="button">🎤 Speak</button> <button class="btn s o" id="vn" type="button">🎙 Record voice note</button> <button class="btn s o" id="vdel" type="button" style="display:none">Remove</button><audio id="vp" controls style="display:none;width:100%;margin-top:6px"></audio><div class="mu" id="vm">Voice note: up to 25 seconds. Works offline.</div><label class="mu" style="display:block">Attach a saved report (image)</label><select id="att"><option value="">None</option></select><label class="mu" style="display:block">Or take / choose a photo</label><input id="attf" type="file" accept="image/*"><div class="mu" id="am"></div>
+<label class="mu" id="notesLabel">Notes / Message for doctor</label><textarea id="nt" placeholder="Describe symptoms or message for the doctor" rows="2" maxlength="400"></textarea><button class="btn s o" id="mic" type="button">🎤 Speak</button> <button class="btn s o" id="vn" type="button">🎙 Record voice note</button> <button class="btn s o" id="vdel" type="button" style="display:none">Remove</button><audio id="vp" controls style="display:none;width:100%;margin-top:6px"></audio><div class="mu" id="vm">Voice note: up to 25 seconds. Works offline.</div><label class="mu" style="display:block">Attach a saved report (image)</label><select id="att"><option value="">None</option></select><label class="mu" style="display:block">Or take / choose a photo</label><input id="attf" type="file" accept="image/*"><div class="mu" id="am"></div>
 <label class="mu"><input type="checkbox" id="cs" style="width:auto;margin-right:6px">Patient agreed to share this case with the doctor</label>
 <div id="pre"></div>
-<details class="card"><summary><b>How is urgency decided?</b></summary><div class="mu">Fixed safety rules, not a diagnosis. RED: any danger sign, breathlessness, pregnancy problem, injury, or temp 39.5°C+. AMBER: temp 38.5°C+, child under 5 with fever or diarrhoea, age 65+ with 2 or more symptoms, or 3 or more symptoms. Otherwise GREEN. A doctor reviews every case and can override the level.</div></details>
+<details class="card"><summary><b>How is urgency decided?</b></summary><div class="mu">Fixed safety rules, not a diagnosis. RED: any danger sign, breathlessness, pregnancy problem, injury, or temp 39.5°C+. YELLOW: temp 38.5°C+, child under 5 with fever or diarrhoea, age 65+ with 2 or more symptoms, or 3 or more symptoms. Otherwise GREEN. A doctor reviews every case and can override the level.</div></details>
 <div class="row"><button class="btn s o" type="button" id="smsb">📱 Send as SMS</button><button class="btn s o" type="button" id="say2">🔊 Listen</button></div><input id="phc" placeholder="PHC / ANM mobile number (for SMS)" inputmode="tel"><div id="smsout"></div><button class="btn" id="save" data-i="Save case">Save case</button></div>
-<h2>My cases</h2><div id="mine" class="mu">None yet.</div></section>
+<h2 id="casesHeading">My cases &amp; sent messages</h2><div id="mine" class="mu">None yet.</div></section>
 
 <section id="t-doc"><h2>👨‍⚕️ Doctor queue</h2><p class="mu">Sorted by urgency. AI drafts the note; you confirm. It never diagnoses.</p><div id="dmode"></div><details class="card"><summary><b>📱 Import a case received by SMS</b></summary><textarea id="smsin" rows="2" placeholder="Paste text starting with SETU1|"></textarea><button class="btn s" id="smsgo">Add case</button><div class="mu" id="smsm"></div></details><div id="dq" class="mu">Loading...</div></section>
 <section id="t-patients"><h2>📋 Patient records</h2><p class="mu">Saved case details and health issues shared with the doctor. Each entry is a separate visit; records are not merged by name.</p><input id="patientSearch" type="search" placeholder="Search name, village, symptom or danger sign" aria-label="Search patient records"><div id="patientRecords" class="mu">Loading records...</div></section>
@@ -142,7 +142,7 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const LS={g(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},s(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
 let dev=LS.g('dev',null);if(!dev){dev='d'+Math.random().toString(36).slice(2,9);LS.s('dev',dev)}
-let db=null,sample=null,cases=[],user=null,staff=false,networkFailed=false,cacheFailed=false,syncing=false,syncTimer=null,syncFailures=0;
+let db=null,sample=null,cases=[],user=null,staff=false,networkFailed=false,syncing=false,syncTimer=null,syncFailures=0;
 const connection=()=>navigator.connection||navigator.mozConnection||navigator.webkitConnection;
 const weakNetwork=()=>{const c=connection();return!!(c&&(c.saveData||/^(slow-2g|2g)$/.test(c.effectiveType||'')||(Number(c.downlink)>0&&Number(c.downlink)<0.5)||(Number(c.rtt)>0&&Number(c.rtt)>1200)))};
 const onlineReady=()=>navigator.onLine&&!weakNetwork()&&!networkFailed;
@@ -155,7 +155,7 @@ function paint(){
  const sig=$('#sig'),q=LS.g('q',[]),offline=!navigator.onLine,weak=!offline&&weakNetwork();
  sig.textContent=offline?'✈️ Offline':weak?'📶 Low network':'📶 Online';sig.classList.toggle('offline',offline);sig.classList.toggle('weak',weak);
  const status=$('#sync');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
- status.textContent=cacheFailed?'⚠️ Could not cache shared records; free device storage':q.length?(syncing?'⏳ Syncing '+q.length+' saved case(s)…':offline?'💾 '+q.length+' case(s) saved on phone; waiting for connection':weak?'💾 '+q.length+' case(s) saved; sync will use low data':networkFailed?'⚠️ Online service unavailable; '+q.length+' case(s) remain saved here':'💾 '+q.length+' case(s) saved on phone; syncing soon'):networkFailed?'⚠️ Online service unavailable; your on-device features still work':'✓ All changes saved on this phone';
+ status.textContent=q.length?(syncing?'⏳ Syncing '+q.length+' saved case(s)…':offline?'💾 '+q.length+' case(s) saved on phone; waiting for connection':weak?'💾 '+q.length+' case(s) saved; sync will use low data':networkFailed?'⚠️ Online service unavailable; '+q.length+' case(s) remain saved here':'💾 '+q.length+' case(s) saved on phone; syncing soon'):networkFailed?'⚠️ Online service unavailable; your on-device features still work':'✓ All changes saved on this phone';
 }
 paint();
 const ICON={Fever:'🤒',Cough:'😷',Diarrhoea:'🚽',Vomiting:'🤢',Headache:'🤕','Body pain':'💪',Weakness:'😪',Rash:'🧴',Breathless:'😮‍💨',Injury:'🩹','Pregnancy issue':'🤰','Chest pain':'💔',Fits:'⚡',Fainting:'😵','Heavy bleeding':'🩸','Cannot drink':'🚫','Infant fever':'👶'};
@@ -164,58 +164,118 @@ let ps=new Set(),pd=new Set();
 function chips(id,arr,set,cls){$(id).innerHTML=arr.map(x=>`<button class="chip ${cls}" data-x="${esc(x)}">${ICON[x]||''} ${esc(x)}</button>`).join('');$(id).onclick=e=>{const b=e.target.closest('[data-x]');if(!b)return;const k=b.dataset.x;set.has(k)?set.delete(k):set.add(k);b.classList.toggle('sel');showPre()}}
 chips('#sy',SY,ps,'');chips('#dg',DG,pd,'d');
 // rule-based triage with reasons
-function triage(c){const r=[];let lv='green';const up=l=>{if(l==='red'||(l==='amber'&&lv==='green'))lv=l};
+function triage(c){const r=[];let lv='green';const up=l=>{if(l==='red'||((l==='yellow'||l==='amber')&&lv==='green'))lv=(l==='amber'?'yellow':l)};
  if(c.danger.length){up('red');r.push('Danger sign: '+c.danger.join(', '))}
  ['Breathless','Pregnancy issue','Injury'].forEach(s=>{if(c.sym.includes(s)){up('red');r.push(s+' needs same-day care')}});
- if(c.temp>=39.5){up('red');r.push('Very high fever')}else if(c.temp>=38.5){up('amber');r.push('High fever')}
- if(c.age&&c.age<5&&(c.sym.includes('Fever')||c.sym.includes('Diarrhoea'))){up('amber');r.push('Child under 5')}
- if(c.age>=65&&c.sym.length>=2){up('amber');r.push('Elderly with multiple symptoms')}
- if(c.sym.length>=3){up('amber');r.push('3 or more symptoms')}
+ if(c.temp>=39.5){up('red');r.push('Very high fever')}else if(c.temp>=38.5){up('yellow');r.push('High fever')}
+ if(c.age&&c.age<5&&(c.sym.includes('Fever')||c.sym.includes('Diarrhoea'))){up('yellow');r.push('Child under 5')}
+ if(c.age>=65&&c.sym.length>=2){up('yellow');r.push('Elderly with multiple symptoms')}
+ if(c.sym.length>=3){up('yellow');r.push('3 or more symptoms')}
  return{level:lv,why:r}}
 const cur=()=>({name:$('#n').value.trim(),age:+$('#a').value||0,village:$('#v').value,temp:+$('#tp').value||0,sym:[...ps],danger:[...pd],notes:$('#nt').value.trim()});
 function showPre(){const c=cur(),t=triage(c);$('#pre').innerHTML=(c.sym.length||c.danger.length)?`<div class="card"><span class="t ${t.level}">${t.level.toUpperCase()}</span> <span class="mu">${esc(t.why.join(' · ')||'No risk flags')}</span><div class="mu">➡ ${refTo(t.level)}</div>${t.level==='red'?'<div class="alert">🚨 Send to PHC now or call 108. Do not wait for a reply.<br><a class="btn s" href="tel:108">📞 Call 108</a>'+facHtml()+'</div>':''}</div>`:''}
 $('#save').onclick=()=>{const c=cur();if(!c.name||(!c.sym.length&&!c.danger.length)){$('#pre').innerHTML='<div class="alert">Add a name and at least one symptom.</div>';return}
  if(!$('#cs').checked){$('#pre').innerHTML='<div class="alert">Please confirm the patient agreed to share this case.</div>';return}
- const ts=Date.now(),t=triage(c),it={...c,id:dev+'-'+ts+'-'+Math.random().toString(36).slice(2,7),dev,ts,triage:t.level,why:t.why,status:'new',shareConsent:true,...(attData?{att:attData}:{}),...(vnData?{voice:vnData}:{})};
- const q=LS.g('q',[]);q.push(it);if(!LS.s('q',q)){$('#pre').innerHTML='<div class="alert">Could not save this case on the phone. Free device storage and try again; the form has been kept.</div>';return}const m=LS.g('mine',[]);m.unshift({id:it.id,name:it.name,triage:it.triage,sym:it.sym,ts:it.ts});LS.s('mine',m.slice(0,20));
- ps.clear();pd.clear();$$('.chip.sel').forEach(x=>x.classList.remove('sel'));['n','a','tp','nt'].forEach(i=>$('#'+i).value='');$('#cs').checked=false;$('#pre').innerHTML='<div class="sync">Saved ✓</div>';attData=null;$('#att').value='';$('#attf').value='';$('#am').textContent='';clearVn();paint();mine();sync()};
-const tag=l=>`<span class="t ${l}">${l.toUpperCase()}</span>`;
-function mine(){const m=LS.g('mine',[]),q=new Set(LS.g('q',[]).map(x=>x.id));$('#mine').innerHTML=m.length?m.map(x=>{const c=cases.find(y=>y.id===x.id);return`<div class="card">${tag(x.triage)} <b>${esc(x.name)}</b> <span class="mu">${esc(x.sym.join(', '))}</span><div class="mu">${q.has(x.id)?'💾 waiting for signal':c&&c.advice?'👨‍⚕️ Doctor: '+esc(c.advice):'Sent, waiting for doctor'}</div></div>`}).join(''):'None yet.'}
-function scheduleSync(delay){if(syncTimer||!navigator.onLine||!db)return;syncTimer=setTimeout(()=>{syncTimer=null;sync()},delay)}
-async function sync(){
- if(syncing||!navigator.onLine||!db)return;
- const q=LS.g('q',[]);if(!Array.isArray(q)||!q.length){networkFailed=false;syncFailures=0;paint();return}
- syncing=true;paint();let failed=false,remaining=q.length;const completed=new Set();
- try{
-  const limit=weakNetwork()?1:5,timeout=weakNetwork()?20000:12000,batch=q.slice(0,limit);
-  for(let i=0;i<batch.length;i++){
-   try{await withTimeout(db.doc('cases/'+batch[i].id).set(batch[i]),timeout);completed.add(batch[i].id)}
-   catch(e){failed=true;networkFailed=true;break}
+ const ts=Date.now(),t=triage(c),isConsult=(curRole==='Patient');
+ const it={...c,id:dev+'-'+ts+'-'+Math.random().toString(36).slice(2,7),dev,ts,triage:t.level,why:t.why,status:'new',shareConsent:true,senderRole:curRole,isConsult,...(attData?{att:attData}:{}),...(vnData?{voice:vnData}:{})};
+ const q=LS.g('q',[]);q.push(it);if(!LS.s('q',q)){$('#pre').innerHTML='<div class="alert">Could not save this case on the phone. Free device storage and try again; the form has been kept.</div>';return}
+ if(isConsult){
+  const p=LS.g('patientConsults',[]);p.unshift({id:it.id,name:it.name,triage:it.triage,sym:it.sym,ts:it.ts,notes:it.notes||''});LS.s('patientConsults',p.slice(0,30));
+  const m=LS.g('mine',[]);m.unshift({id:it.id,name:it.name,triage:it.triage,sym:it.sym,ts:it.ts,notes:it.notes||''});LS.s('mine',m.slice(0,30));
+ }else{
+  const ashaList=LS.g('ashaCases',[]);ashaList.unshift({id:it.id,name:it.name,triage:it.triage,sym:it.sym,ts:it.ts,notes:it.notes||''});LS.s('ashaCases',ashaList.slice(0,30));
+ }
+ if(!cases.some(x=>x&&x.id===it.id))cases.unshift(it);
+ ps.clear();pd.clear();$$('.chip.sel').forEach(x=>x.classList.remove('sel'));['n','a','tp','nt'].forEach(i=>$('#'+i).value='');$('#cs').checked=false;
+ if(isConsult){
+  $('#pre').innerHTML='<div class="card" style="border-left:4px solid var(--pr);padding:10px 14px"><b style="color:var(--pr);font-size:1.05em"><span style="color:var(--mu);font-size:1.2em">✓</span> Sent to doctor successfully!</b><div class="mu" style="margin-top:4px">Showing single tick (✓). Once the doctor opens and reviews this case in Doctor Queue, it will change to a double tick (✓✓).</div></div>';
+ }else{
+  $('#pre').innerHTML='<div class="card" style="border-left:4px solid var(--pr);padding:10px 14px"><b style="color:var(--pr);font-size:1.05em">✓ Case recorded successfully!</b><div class="mu" style="margin-top:4px">Saved on phone and queued for doctor review.</div></div>';
+ }
+ attData=null;$('#att').value='';$('#attf').value='';$('#am').textContent='';clearVn();paint();mine();sync()};
+const tag=l=>{const k=(l==='amber'||l==='yellow')?'yellow':l;return `<span class="t ${k}">${(k||'').toUpperCase()}</span>`};
+function mine(){
+ const allCases=cases.concat(LS.g('q',[]),LS.g('cachedCases',[]));
+ const seenMap=LS.g('seenCases',{});
+ const q=new Set(LS.g('q',[]).map(x=>x.id));
+ const el=$('#mine');if(!el)return;
+ if(curRole==='ASHA'){
+  const ashaList=LS.g('ashaCases',[]);
+  el.innerHTML=ashaList.length?ashaList.map(x=>{
+   const c=allCases.find(y=>y&&y.id===x.id)||x;
+   const isAnswered=(c&&c.status==='answered'&&c.advice)||(seenMap[x.id]&&seenMap[x.id].advice);
+   const adviceText=(c&&c.advice)||(seenMap[x.id]&&seenMap[x.id].advice)||'';
+   return `<div class="card" data-case-id="${esc(x.id)}">${tag(x.triage)} <b>${esc(x.name)}</b> <span class="mu">${esc((x.sym||[]).join(', '))}</span>${x.notes?`<div class="mu" style="margin-top:4px">"${esc(x.notes)}"</div>`:''}${isAnswered?`<div class="card" style="margin:6px 0 0;padding:8px;background:var(--gb)"><b>Doctor advice:</b> ${esc(adviceText)}</div>`:''}</div>`;
+  }).join(''):'<div class="card mu">No ASHA field cases recorded yet.</div>';
+  return;
+ }
+ const pList=LS.g('patientConsults',null);
+ const m=pList||LS.g('mine',[]);
+ el.innerHTML=m.length?m.map(x=>{
+  const c=allCases.find(y=>y&&y.id===x.id)||x;
+  const isAnswered=(c&&c.status==='answered'&&c.advice)||(seenMap[x.id]&&seenMap[x.id].advice);
+  const adviceText=(c&&c.advice)||(seenMap[x.id]&&seenMap[x.id].advice)||'';
+  const isSeen=(c&&(c.seen||c.status==='answered'))||(seenMap[x.id]!==undefined);
+  let statusBadge='';
+  if(isAnswered){
+   statusBadge=`<div style="display:flex;align-items:center;gap:6px;margin-top:6px;color:#087f8c;font-weight:700;font-size:.9em"><span style="letter-spacing:-1px;font-size:1.15em">✓✓</span> <span>Doctor Replied</span></div><div class="card" style="margin:6px 0 0;padding:10px;background:var(--gb);border:1px solid var(--gr)"><b>👨‍⚕️ Doctor's Advice:</b> ${esc(adviceText)}</div>`;
+  }else if(isSeen){
+   statusBadge=`<div style="display:flex;align-items:center;gap:6px;margin-top:6px;color:#087f8c;font-weight:600;font-size:.88em"><span style="letter-spacing:-1px;font-size:1.2em;color:#087f8c">✓✓</span> <span>Seen by doctor</span> <span class="mu">· Doctor has viewed this message</span></div>`;
+  }else if(q.has(x.id)&&!navigator.onLine){
+   statusBadge=`<div style="display:flex;align-items:center;gap:6px;margin-top:6px;color:var(--mu);font-size:.85em"><span>💾</span> <span>Saved on phone · Waiting for network to send</span></div>`;
+  }else{
+   statusBadge=`<div style="display:flex;align-items:center;gap:6px;margin-top:6px;color:var(--mu);font-weight:600;font-size:.88em"><span style="font-size:1.15em;color:var(--mu)">✓</span> <span>Sent to doctor</span> <span class="mu" style="font-weight:normal">· Waiting for doctor to view</span></div>`;
   }
-  const left=LS.g('q',[]).filter(it=>!completed.has(it.id));remaining=left.length;
-  if(!LS.s('q',left)){networkFailed=true;failed=true}
-  if(!failed){networkFailed=false;syncFailures=0}
- }finally{
-  syncing=false;paint();mine();
-  if(failed){syncFailures=Math.min(syncFailures+1,6);scheduleSync(Math.min(60000,1000*2**(syncFailures-1)))}
-  else if(remaining)scheduleSync(weakNetwork()?5000:1000)
+  return `<div class="card" data-case-id="${esc(x.id)}">${tag(x.triage)} <b>${esc(x.name)}</b> <span class="mu">${esc((x.sym||[]).join(', '))}</span>${x.notes?`<div class="mu" style="margin-top:4px;font-style:italic">"${esc(x.notes)}"</div>`:''}${statusBadge}</div>`;
+ }).join(''):'<div class="card mu">No sent consultations yet. Fill the form above to send a message to the doctor.</div>';
+}
+function markCasesSeenByDoctor(list){
+ const seenMap=LS.g('seenCases',{});let changed=false;
+ (list||[]).forEach(c=>{
+  if(c&&c.id&&!seenMap[c.id]){
+   seenMap[c.id]={seenAt:Date.now()};c.seen=true;c.seenAt=seenMap[c.id].seenAt;changed=true;
+   if(db){try{db.doc('cases/'+c.id).update({seen:true,seenAt:c.seenAt})}catch(e){}}
+  }
+ });
+ if(changed){
+  LS.s('seenCases',seenMap);
+  const q=LS.g('q',[]);q.forEach(it=>{if(seenMap[it.id]){it.seen=true;it.seenAt=seenMap[it.id].seenAt}});LS.s('q',q);
+  const cached=LS.g('cachedCases',[]);cached.forEach(it=>{if(seenMap[it.id]){it.seen=true;it.seenAt=seenMap[it.id].seenAt}});LS.s('cachedCases',cached);
+  mine();
  }
 }
 // doctor
-const ord={red:0,amber:1,green:2};
-function doctor(){const el=$('#dq');$('#dmode').innerHTML=db?'':'<div class="sync">Demo mode: not connected to the shared database. Showing sample and on-device cases only.</div>';const open=cases.filter(c=>!c.demo||true).slice().sort((a,b)=>(a.status==='answered')-(b.status==='answered')||ord[a.triage]-ord[b.triage]||b.ts-a.ts);
- el.innerHTML=open.length?open.map(c=>`<div class="card" data-id="${esc(c.id)}">${tag(c.triage)} <b>${esc(c.name)}</b>, ${esc(c.age||'?')} yrs · ${esc(c.village)}<div class="mu">${esc(c.sym.join(', '))}${c.temp?' · '+esc(c.temp)+'°C':''}${c.danger.length?' · ⚠ '+esc(c.danger.join(', ')):''}</div><div class="mu">Why: ${esc((c.why||[]).join('; ')||'-')}</div>${c.notes?'<div>'+esc(c.notes)+'</div>':''}${c.att&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(c.att.url)?'<div class="mu">📎 '+esc(c.att.type+': '+c.att.title)+'</div><img class="th" src="'+c.att.url+'" alt="Attached report">':''}${c.voice&&/^data:audio\/(webm|mp4|ogg)(;codecs=[\w.,-]+)?;base64,[A-Za-z0-9+\/=]+$/.test(c.voice)?'<div class="mu">🎙 Voice note</div><audio controls src="'+c.voice+'" style="width:100%"></audio>':''}
- ${c.summary?'<pre>'+esc(c.summary)+'</pre>':''}${c.status==='answered'?'<div><b>Advice sent:</b> '+esc(c.advice)+(['red','amber','green'].includes(c.triageFinal)?' · Doctor set '+tag(c.triageFinal):'')+'</div>':`<button class="btn s o" data-ai="${esc(c.id)}">✨ AI case note</button><select data-ov="${esc(c.id)}"><option value="">Keep ${esc(c.triage)}</option><option value="red">Set RED</option><option value="amber">Set AMBER</option><option value="green">Set GREEN</option></select><textarea data-adv="${esc(c.id)}" rows="2" placeholder="Advice for the patient / ASHA"></textarea><button class="btn s" data-send="${esc(c.id)}">Confirm &amp; send</button>`}</div>`).join(''):'No cases yet.';
+const ord={red:0,yellow:1,amber:1,green:2};
+function doctor(){
+ const el=$('#dq');$('#dmode').innerHTML=db?'':'<div class="sync">Demo mode: not connected to the shared database. Showing sample and on-device cases only.</div>';
+ if(!db){const saved=[...LS.g('cachedCases',[]),...LS.g('q',[])];saved.forEach(c=>{if(c&&c.id&&!cases.some(x=>x&&x.id===c.id))cases.push(c)})}
+ const open=cases.filter(c=>!c.demo||true).slice().sort((a,b)=>(a.status==='answered')-(b.status==='answered')||ord[a.triage]-ord[b.triage]||b.ts-a.ts);
+ markCasesSeenByDoctor(open);
+ const isPatientConsult=c=>c&&(c.isConsult===true||c.senderRole==='Patient'||(!c.demo&&c.notes&&!String(c.notes).startsWith('Received by SMS')&&!String(c.notes).startsWith('Household of')));
+ const consults=open.filter(isPatientConsult);
+ const fieldList=open.filter(c=>!isPatientConsult(c));
+ const renderCaseCard=(c,isConsultCard)=>`<div class="card" data-id="${esc(c.id)}" style="${isConsultCard?'border-left:4px solid #087f8c;background:var(--card)':''}">${isConsultCard?'<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px"><div><span class="t" style="background:#e0f2fe;color:#0369a1;font-weight:700">PATIENT CONSULT</span> '+tag(c.triage)+'</div><span class="mu" style="font-size:.85em">'+(c.ts?new Date(c.ts).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'')+'</span></div>':tag(c.triage)+' '}<b>${esc(c.name)}</b>, ${esc(c.age||'?')} yrs · ${esc(c.village)}<div class="mu">${esc(c.sym.join(', '))}${c.temp?' · '+esc(c.temp)+'°C':''}${c.danger.length?' · ⚠ '+esc(c.danger.join(', ')):''}</div><div class="mu">Why: ${esc((c.why||[]).join('; ')||'-')}</div>${c.notes?(isConsultCard?`<div class="card" style="margin:8px 0;padding:8px 12px;background:var(--bg);border:1px solid var(--bd)"><b>💬 Patient Message:</b> <div style="margin-top:2px;font-style:italic">"${esc(c.notes)}"</div></div>`:'<div>'+esc(c.notes)+'</div>'):''}${c.att&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(c.att.url)?'<div class="mu">📎 '+esc(c.att.type+': '+c.att.title)+'</div><img class="th" src="'+c.att.url+'" alt="Attached report">':''}${c.voice&&/^data:audio\/(webm|mp4|ogg)(;codecs=[\w.,-]+)?;base64,[A-Za-z0-9+\/=]+$/.test(c.voice)?'<div class="mu">🎙 Voice note</div><audio controls src="'+c.voice+'" style="width:100%"></audio>':''}${c.summary?'<pre>'+esc(c.summary)+'</pre>':''}${c.status==='answered'?`<div style="margin-top:8px"><b style="color:#087f8c">✓✓ Doctor Advice Sent:</b> ${esc(c.advice)}${['red','yellow','amber','green'].includes(c.triageFinal)?' · Doctor set '+tag(c.triageFinal):''}</div>`:`<div style="margin-top:10px">${!isConsultCard?`<button class="btn s o" data-ai="${esc(c.id)}">✨ AI case note</button>`:''}<select data-ov="${esc(c.id)}"><option value="">Keep ${esc(c.triage==='amber'?'yellow':c.triage)}</option><option value="red">Set RED</option><option value="yellow">Set YELLOW</option><option value="green">Set GREEN</option></select><textarea data-adv="${esc(c.id)}" rows="2" placeholder="${isConsultCard?'Write advice for '+esc(c.name)+'...':'Advice for the patient / ASHA'}"></textarea><button class="btn s" data-send="${esc(c.id)}">${isConsultCard?'✉️ Send Advice to Patient':'Confirm &amp; send'}</button></div>`}</div>`;
+ let html='';
+ if(consults.length){
+  html+=`<div style="margin-bottom:18px"><h3 style="color:#087f8c;display:flex;align-items:center;gap:6px;margin:0 0 10px"><span>✉️</span> <span>Direct Patient Consultations (${consults.length})</span></h3>`+consults.map(c=>renderCaseCard(c,true)).join('')+'</div>';
+ }else{
+  html+=`<div class="card mu" style="margin-bottom:14px;border-left:4px solid var(--bd)">No active patient consultations waiting. When a patient submits from the Consult tab, it appears here immediately.</div>`;
+ }
+ if(fieldList.length){
+  html+=`<h3 style="margin:16px 0 10px;color:var(--mu);display:flex;align-items:center;gap:6px"><span>📋</span> <span>ASHA Field Screening &amp; General Queue (${fieldList.length})</span></h3>`+fieldList.map(c=>renderCaseCard(c,false)).join('');
+ }
+ el.innerHTML=html||'No cases yet.';
  patientRecords()}
 function patientRecords(){
  const el=$('#patientRecords'),query=($('#patientSearch').value||'').trim().toLowerCase();
- const saved=cases.concat(LS.g('q',[]),LS.g('bluetoothImports',[])).filter(c=>c&&!c.demo&&(c.dev==='bluetooth'||c.shareConsent===true||c.dev==='sms'||c.shareConsent==null));
+ if(!db){const savedCases=[...LS.g('cachedCases',[]),...LS.g('q',[])];savedCases.forEach(c=>{if(c&&c.id&&!cases.some(x=>x&&x.id===c.id))cases.push(c)})}
+ const saved=cases.concat(LS.g('q',[]),LS.g('bluetoothImports',[])).filter(c=>c&&!c.demo&&(c.dev==='bluetooth'||c.shareConsent===true||c.dev==='sms'||c.shareConsent==null||c.isConsult));
  const unique=[...new Map(saved.map(c=>[c.id,c])).values()].sort((a,b)=>(b.ts||0)-(a.ts||0));
  const matches=unique.filter(c=>[c.name,c.village,...(c.sym||[]),...(c.danger||[]),c.notes].join(' ').toLowerCase().includes(query));
  el.innerHTML=matches.length?matches.map(c=>{
-  const level=['red','amber','green'].includes(c.triageFinal)?c.triageFinal:c.triage;
+  const level=['red','yellow','amber','green'].includes(c.triageFinal)?c.triageFinal:c.triage;
   const date=c.ts?new Date(c.ts).toLocaleString():'Date unavailable';
-  const source=c.dev==='bluetooth'?'Imported by Bluetooth':c.dev==='sms'?'Received by doctor via SMS':c.shareConsent===true?'Shared with patient consent':'Previously shared case';
+  const source=c.isConsult?'Direct Patient Consultation':c.dev==='bluetooth'?'Imported by Bluetooth':c.dev==='sms'?'Received by doctor via SMS':c.shareConsent===true?'Shared with patient consent':'Previously shared case';
   const report=c.att&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(c.att.url)?`<div class="mu">📎 ${esc(c.att.type)}: ${esc(c.att.title)}</div><img class="th" src="${c.att.url}" alt="Attached report">`:'';
   const voice=c.voice&&/^data:audio\/(webm|mp4|ogg)(;codecs=[\w.,-]+)?;base64,[A-Za-z0-9+\/=]+$/.test(c.voice)?'<div class="mu">🎙 Voice note</div><audio controls src="'+c.voice+'" style="width:100%"></audio>':'';
   return`<details class="card"><summary>${tag(level)} <b>${esc(c.name||'Unknown patient')}</b> · ${esc(c.village||'Village unavailable')} · ${esc(date)}</summary><div class="mu">${esc(source)}${c.age?` · Age ${esc(c.age)}`:''}${c.temp?` · Temperature ${esc(c.temp)}°C`:''}</div><div><b>Symptoms:</b> ${esc((c.sym||[]).join(', ')||'None recorded')}</div><div><b>Danger signs:</b> ${esc((c.danger||[]).join(', ')||'None recorded')}</div><div><b>Urgency:</b> ${esc(level||'Not assessed')} · ${esc((c.why||[]).join('; ')||'No rule notes')}</div>${c.notes?`<div><b>Notes:</b> ${esc(c.notes)}</div>`:''}${report}${voice}${c.summary?`<pre>${esc(c.summary)}</pre>`:''}${c.advice?`<div><b>Doctor advice:</b> ${esc(c.advice)}</div>`:''}</details>`;
@@ -226,7 +286,16 @@ $('#dq').onclick=async e=>{const a=e.target.closest('[data-ai]'),s=e.target.clos
  if(a&&sample){const c=cases.find(x=>x.id===a.dataset.ai);a.textContent='Writing...';
   try{const r=await sample('You help a village doctor. Write a short case note for a doctor to REVIEW from this data: '+JSON.stringify({age:c.age,village:c.village,temp:c.temp,symptoms:c.sym,danger:c.danger,notes:c.notes,triage:c.triage})+'. Format: 1) English: 3 lines (key findings, urgency, questions to ask). 2) Odia: same note in simple Odia. Do not diagnose, do not name drugs or doses. End with: "AI draft, doctor to confirm."');
    await db.doc('cases/'+c.id).update({summary:r.text})}catch(x){a.textContent='AI unavailable'}}
- if(s&&db){const v=$('[data-adv="'+s.dataset.send+'"]').value.trim();if(!v)return;try{await db.doc('cases/'+s.dataset.send).update({advice:v,status:'answered',answeredAt:Date.now(),...(($('[data-ov="'+s.dataset.send+'"]')||{}).value?{triageFinal:$('[data-ov="'+s.dataset.send+'"]').value}:{})})}catch(x){s.textContent='Not allowed'}}};
+ if(s){const id=s.dataset.send,v=$('[data-adv="'+id+'"]').value.trim();if(!v)return;
+  const ov=($('[data-ov="'+id+'"]')||{}).value;
+  const c=cases.find(x=>x.id===id);
+  if(c){c.advice=v;c.status='answered';c.answeredAt=Date.now();c.seen=true;if(ov)c.triageFinal=ov;}
+  const seenMap=LS.g('seenCases',{});seenMap[id]={seenAt:Date.now(),answeredAt:Date.now(),advice:v};LS.s('seenCases',seenMap);
+  const q=LS.g('q',[]);q.forEach(it=>{if(it.id===id){it.advice=v;it.status='answered';it.seen=true;if(ov)it.triageFinal=ov}});LS.s('q',q);
+  const cached=LS.g('cachedCases',[]);cached.forEach(it=>{if(it.id===id){it.advice=v;it.status='answered';it.seen=true;if(ov)it.triageFinal=ov}});LS.s('cachedCases',cached);
+  if(db){try{await db.doc('cases/'+id).update({advice:v,status:'answered',seen:true,answeredAt:Date.now(),...(ov?{triageFinal:ov}:{})})}catch(x){if(!c)s.textContent='Not allowed'}}
+  doctor();mine();}
+};
 // district watch
 function district(){$('#dmode2').innerHTML=db?'':'<div class="sync">Demo mode: not connected to the shared database. Showing sample and on-device cases only.</div>';const wk=Date.now()-7*864e5,r=cases.filter(c=>c.ts>=wk),cl={};
  r.forEach(c=>c.sym.forEach(s=>{const k=c.village+'|'+s;cl[k]=(cl[k]||0)+1}));
@@ -234,11 +303,11 @@ function district(){$('#dmode2').innerHTML=db?'':'<div class="sync">Demo mode: n
  $('#al').innerHTML=al.length?al.map(([k,n])=>{const[v,s]=k.split('|');return`<div class="alert">⚠ <b>${esc(v)}</b>: ${n} cases of <b>${esc(s)}</b> in 7 days. Suggested: team visit, check water source, stock ORS.</div>`}).join(''):'<div class="card mu">No clusters detected.</div>';
  const vc={};r.forEach(c=>vc[c.village]=(vc[c.village]||0)+1);const mx=Math.max(1,...Object.values(vc));
  $('#vb').innerHTML=Object.entries(vc).map(([v,n])=>`<div>${esc(v)} <b>${n}</b></div><div class="bar" style="width:${n/mx*100}%"></div>`).join('')||'<span class="mu">No data</span>';
- const tc={red:0,amber:0,green:0};r.forEach(c=>tc[c.triage]!==undefined&&tc[c.triage]++);$('#tm').innerHTML=Object.entries(tc).map(([k,n])=>tag(k)+' '+n).join(' &nbsp; ');drawMap(vc,al);dash(r,tc)}
+ const tc={red:0,yellow:0,green:0};r.forEach(c=>{const k=c.triage==='amber'?'yellow':c.triage;if(tc[k]!==undefined)tc[k]++});$('#tm').innerHTML=Object.entries(tc).map(([k,n])=>tag(k)+' '+n).join(' &nbsp; ');drawMap(vc,al);dash(r,tc)}
 const dat=d=>typeof d.data==='function'?d.data():d.data;
 (async()=>{try{if(window.claude){sample=await claude.use('sample');$('#fab').style.display=sample?'block':'none';user=await claude.use('user');staff=!!(user&&((await user.isOwner())||(await user.canEdit())));db=await claude.use('db');
- if(db){sync();db.collection('alerts').orderBy('ts','desc').limit(1).onSnapshot(q=>{const d=(q.docs||[]).map(dat)[0];$('#alertbar').innerHTML=d&&Date.now()-d.ts<3*864e5?'<div class="alert">📢 '+esc(d.text)+'</div>':''},()=>{});db.collection('cases').orderBy('ts','desc').limit(300).onSnapshot(s=>{cases=(s.docs||[]).map(dat).filter(x=>x&&x.sym);networkFailed=false;cacheFailed=!LS.s('cachedCases',cases.slice(0,300));doctor();district();mine();paint()},()=>{networkFailed=true;paint();fb()})}}}catch(e){networkFailed=!!navigator.onLine;paint()}})();
-function go(t){const section=t==='stk'?'med':t;$$('section').forEach(x=>x.classList.toggle('on',x.id==='t-'+section));$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.g===t));scrollTo(0,0)}
+ if(db){sync();db.collection('alerts').orderBy('ts','desc').limit(1).onSnapshot(q=>{const d=(q.docs||[]).map(dat)[0];$('#alertbar').innerHTML=d&&Date.now()-d.ts<3*864e5?'<div class="alert">📢 '+esc(d.text)+'</div>':''},()=>{});db.collection('cases').orderBy('ts','desc').limit(300).onSnapshot(s=>{cases=(s.docs||[]).map(dat).filter(x=>x&&x.sym);networkFailed=false;if(!LS.s('cachedCases',cases.slice(0,300)))$('#sync').textContent='⚠️ Could not cache shared cases on this phone; free device storage.';doctor();district();mine();paint()},()=>{networkFailed=true;paint();fb()})}}}catch(e){networkFailed=!!navigator.onLine;paint()}})();
+function go(t){const section=t==='stk'?'med':t;$$('section').forEach(x=>x.classList.toggle('on',x.id==='t-'+section));$$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.g===t));scrollTo(0,0);if(section==='doc'){doctor()}if(section==='patients'){patientRecords()}if(section==='asha'){mine();paint()}}
 $('#nav').onclick=e=>{const b=e.target.closest('[data-g]');if(b)go(b.dataset.g)};$('#big').onclick=()=>document.body.classList.toggle('big');
 const userProfile=LS.g('userProfile',{name:'',phone:''});
 $('#userName').value=userProfile.name||'';$('#userPhone').value=userProfile.phone||'';
@@ -282,7 +351,7 @@ const WARN={Fever:'Fever for more than 3 days, or in a baby under 3 months: see 
 function medList(q){const k=Object.keys(MED).filter(x=>x.toLowerCase().includes((q||'').trim().toLowerCase()));$('#medchips').innerHTML=k.length?k.map(x=>`<button type="button" class="chip${x===curMed?' sel':''}" data-m="${esc(x)}" aria-pressed="${x===curMed}">${x===curMed?'✓ ':''}${esc(x)}</button>`).join(''):'<div class="mu">No match. Ask your ASHA or pharmacist.</div>'}
 medList('');$('#msq').oninput=e=>medList(e.target.value);
 var curMed=null;
-function showMed(k){if(k===curMed){curMed=null;$('#medout').innerHTML='';medList($('#msq').value);return}curMed=k;medList($('#msq').value);$('#medout').innerHTML='<div class="card"><b>✓ '+esc(k)+'</b> <span class="mu">(tap again to clear)</span></div>'+(WARN[k]?`<div class="alert">⚠ ${esc(WARN[k])}</div>`:'')+MED[k].map(m=>`<div class="card"><b>${esc(m[0])}</b> ${m[1]===1?'<span class="t red">Rx only</span>':m[1]===2?'<span class="t amber">Home care</span>':'<span class="t green">OTC</span>'}<div class="mu">${esc(m[2])}</div>${stkLine(m)}</div>`).join('');$('#medout').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function showMed(k){if(k===curMed){curMed=null;$('#medout').innerHTML='';medList($('#msq').value);return}curMed=k;medList($('#msq').value);$('#medout').innerHTML='<div class="card"><b>✓ '+esc(k)+'</b> <span class="mu">(tap again to clear)</span></div>'+(WARN[k]?`<div class="alert">⚠ ${esc(WARN[k])}</div>`:'')+MED[k].map(m=>`<div class="card"><b>${esc(m[0])}</b> ${m[1]===1?'<span class="t red">Rx only</span>':m[1]===2?'<span class="t yellow">Home care</span>':'<span class="t green">OTC</span>'}<div class="mu">${esc(m[2])}</div>${stkLine(m)}</div>`).join('');$('#medout').scrollIntoView({behavior:'smooth',block:'nearest'})}
 function medRefresh(){if(curMed){const k=curMed;curMed=null;showMed(k)}nearRender()}
 $('#medchips').onclick=e=>{const b=e.target.closest('[data-m]');if(b)showMed(b.dataset.m)};
 const b64=u=>btoa(String.fromCharCode(...u)),unb=x=>Uint8Array.from(atob(x),c=>c.charCodeAt(0)),RF=['n','a','b','c','p'];
@@ -307,30 +376,30 @@ $('#fab').onclick=()=>go('chat');
 $('#aisend').onclick=async()=>{const q=$('#aiq').value.trim();if(!q||!sample)return;$('#aiout').textContent='Thinking...';
  try{const r=await sample('You are a health information helper for rural India. Reply in the same language as the question, in 3 to 5 simple sentences. General guidance only, never a diagnosis, never name prescription-only medicines or doses. For danger signs (chest pain, trouble breathing, heavy bleeding, fits, fainting, pregnancy problems, infant fever) say go to the nearest PHC or call 108 immediately. Question: '+q,{cache:false});$('#aiout').textContent=r.text}catch(e){$('#aiout').textContent='AI help is unavailable. For urgent problems call 108 or visit the PHC.'}};
 let LANG=LS.g('lang','en'),attData=null,myPos=null,curRole='Patient',ATT=[];
-const UI_KEYS=['Patient','ASHA','Doctor','District','Consult','Ask','Symptoms','Records','Medicines','Cases','Household','Stock','Near me','Queue','Patient records','Outbreaks','Save case','Speak','User','About you','Profile privacy','Name','Phone number','Save profile','More options','Mother & child','Chronic care','Schemes','Your name','Your phone number'];
+const UI_KEYS=['Patient','ASHA','Doctor','District','Consult','Ask','Symptoms','Records','Medicines','Cases','Household','Stock','Near me','Queue','Patient records','Outbreaks','Save case','Speak','User','About you','Profile privacy','Name','Phone number','Save profile','More options','Mother & child','Chronic care','Schemes','Your name','Your phone number','Sign out'];
 const UI_TX={
-as:'ৰোগী|আশা কৰ্মী|চিকিৎসক|জিলা|পৰামৰ্শ|সোধক|লক্ষণ|নথি|ঔষধ|মামলা|পৰিয়াল|মজুত|ওচৰত|শাৰী|ৰোগীৰ নথি|ৰোগৰ প্ৰাদুৰ্ভাৱ|মামলা সংৰক্ষণ|কথা কৈ লিখক|ব্যৱহাৰকাৰী|আপোনাৰ বিষয়ে|কেৱল এই ডিভাইচত সংৰক্ষিত; চিকিৎসকৰ সৈতে ভাগ কৰা নহয়।|নাম|ফোন নম্বৰ|প্ৰফাইল সংৰক্ষণ|অতিৰিক্ত বিকল্প|মাতৃ আৰু শিশু|দীৰ্ঘম্যাদী ৰোগৰ যত্ন|আঁচনি|আপোনাৰ নাম|আপোনাৰ ফোন নম্বৰ',
-bn:'রোগী|আশা কর্মী|চিকিৎসক|জেলা|পরামর্শ|জিজ্ঞাসা করুন|উপসর্গ|রেকর্ড|ওষুধ|কেস|পরিবার|মজুত|কাছাকাছি|সারি|রোগীর রেকর্ড|রোগের প্রাদুর্ভাব|কেস সংরক্ষণ|কথা বলে লিখুন|ব্যবহারকারী|আপনার সম্পর্কে|শুধু এই ডিভাইসে সংরক্ষিত; চিকিৎসকের সঙ্গে ভাগ করা হয় না।|নাম|ফোন নম্বর|প্রোফাইল সংরক্ষণ|আরও বিকল্প|মা ও শিশু|দীর্ঘস্থায়ী রোগের যত্ন|সরকারি প্রকল্প|আপনার নাম|আপনার ফোন নম্বর',
-brx:'रोगी|आशा खामानि|डाक्टर|जिला|सोलोंथाइ|सों|लक्षण|रेखाथाय|औषध|केस|नखर|मजुत|आसिनि|सारि|रोगी रेखाथाय|बेमारि फेहेरनाय|केस थिना|बुंनानै लिर|बाहायगिरि|नोंनि सोमोन्दै|बे डिभाइसआवसो दोननाय; डाक्टरजों शेयार खालामनाय नङा।|मुं|फोन नाम्बार|प्रफाइल थिना|बां सोलोंथाइ|आइ आरो फिसा|गाहायनि बेमारि जथुम्मा|आखाय|नोंनि मुं|नोंनि फोन नाम्बार',
-doi:'मरीज|आशा कर्मी|डाक्टर|जिला|सलाह|पुच्छो|लच्छण|रिकार्ड|दवाइयां|केस|परवार|भंडार|नेड़े|कतार|मरीज रिकार्ड|बीमारी फैलना|केस बचाओ|बोलियै लिखो|बरतूनी|तुंदे बारे|सिर्फ इस डिवाइस पर बचाया; डाक्टर कन्नै सांझा नेईं कीता।|नांऽ|फोन नंबर|प्रोफाइल बचाओ|होर विकल्प|मां ते बच्चा|लम्मे समें दी बीमारी दी देखभाल|योजनां|तुंदा नांऽ|तुंदा फोन नंबर',
-gu:'દર્દી|આશા કાર્યકર|ડૉક્ટર|જિલ્લો|પરામર્શ|પૂછો|લક્ષણો|રેકોર્ડ|દવાઓ|કેસ|પરિવાર|જથ્થો|નજીકમાં|કતાર|દર્દીના રેકોર્ડ|રોગચાળો|કેસ સાચવો|બોલીને લખો|વપરાશકર્તા|તમારા વિશે|ફક્ત આ ઉપકરણમાં સાચવ્યું; ડૉક્ટર સાથે શેર કર્યું નથી.|નામ|ફોન નંબર|પ્રોફાઇલ સાચવો|વધુ વિકલ્પો|માતા અને બાળક|દીર્ઘકાલીન સંભાળ|યોજનાઓ|તમારું નામ|તમારો ફોન નંબર',
-hi:'मरीज़|आशा कार्यकर्ता|डॉक्टर|ज़िला|परामर्श|पूछें|लक्षण|रिकॉर्ड|दवाइयाँ|मामले|परिवार|भंडार|पास में|कतार|मरीज़ के रिकॉर्ड|बीमारी का फैलाव|मामला सहेजें|बोलकर लिखें|उपयोगकर्ता|आपके बारे में|सिर्फ़ इस डिवाइस पर सहेजा गया; डॉक्टर के साथ साझा नहीं किया गया।|नाम|फ़ोन नंबर|प्रोफ़ाइल सहेजें|और विकल्प|माँ और बच्चा|दीर्घकालिक देखभाल|योजनाएँ|आपका नाम|आपका फ़ोन नंबर',
-kn:'ರೋಗಿ|ಆಶಾ ಕಾರ್ಯಕರ್ತೆ|ವೈದ್ಯರು|ಜಿಲ್ಲೆ|ಸಮಾಲೋಚನೆ|ಕೇಳಿ|ಲಕ್ಷಣಗಳು|ದಾಖಲೆಗಳು|ಔಷಧಿಗಳು|ಪ್ರಕರಣಗಳು|ಕುಟುಂಬ|ದಾಸ್ತಾನು|ಹತ್ತಿರದಲ್ಲಿ|ಸರದಿ|ರೋಗಿಯ ದಾಖಲೆಗಳು|ರೋಗ ಹರಡುವಿಕೆ|ಪ್ರಕರಣ ಉಳಿಸಿ|ಮಾತನಾಡಿ ಬರೆಯಿರಿ|ಬಳಕೆದಾರರು|ನಿಮ್ಮ ಬಗ್ಗೆ|ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಸಲಾಗಿದೆ; ವೈದ್ಯರೊಂದಿಗೆ ಹಂಚಿಕೊಂಡಿಲ್ಲ.|ಹೆಸರು|ಫೋನ್ ಸಂಖ್ಯೆ|ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ|ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು|ತಾಯಿ ಮತ್ತು ಮಗು|ದೀರ್ಘಕಾಲದ ಆರೈಕೆ|ಯೋಜನೆಗಳು|ನಿಮ್ಮ ಹೆಸರು|ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ',
-ks:'مریض|آشا ورکر|ڈاکٹر|ضلع|مشورہ|پُچھِو|علامتہٕ|ریکارڈ|دواہ|کیس|خاندان|ذخیرہ|نزدیک|قطار|مریض ریکارڈ|بیماری ہٕند پھیلاؤ|کیس محفوظ کٔرِو|بوزِتھ لیکھو|صارف|تُہند بارے|صرف یتھ ڈیوایسَس منز محفوظ؛ ڈاکٹرَس سۭتۍ شیئر نہ۔|ناو|فون نمبر|پروفائل محفوظ کٔرِو|مزید اختیار|ماجہ تہٕ بچہ|مزمن بیماری ہٕند نگہداشت|سکیمہٕ|تُہند ناو|تُہند فون نمبر',
-kok:'रुग्ण|आशा कार्यकर्ती|दोतोर|जिल्लो|सल्लो|विचार|लक्षणां|नोंदी|औषधां|केस|कुटुंब|साठो|लागीं|रांग|रुग्ण नोंदी|रोगाचो उद्रेक|केस जतन करात|उलोवन बरयात|वापरपी|तुमचे विशीं|फकत ह्या उपकरणार जतन केलां; दोतोराकडेन वांटूंक ना.|नांव|फोन क्रमांक|प्रोफायल जतन करात|आनी पर्याय|आवय आनी भुरगो|दीर्घकालीन सांभाळ|योजना|तुमचें नांव|तुमचो फोन क्रमांक',
-mai:'रोगी|आशा कार्यकर्ता|चिकित्सक|जिला|परामर्श|पूछू|लक्षण|अभिलेख|औषध|मामिला|परिवार|भंडार|नजदीक|कतार|रोगी अभिलेख|रोगक प्रसार|मामिला सुरक्षित करू|बाजि कऽ लिखू|उपयोगकर्ता|अहाँक बारेमे|केवल एहि उपकरण पर सुरक्षित; चिकित्सक संग साझा नहि कएल गेल।|नाम|फोन नंबर|प्रोफाइल सुरक्षित करू|आओर विकल्प|माय आ बच्चा|दीर्घकालीन देखभाल|योजना|अहाँक नाम|अहाँक फोन नंबर',
-ml:'രോഗി|ആശാ പ്രവർത്തക|ഡോക്ടർ|ജില്ല|കൺസൾട്ടേഷൻ|ചോദിക്കുക|ലക്ഷണങ്ങൾ|രേഖകൾ|മരുന്നുകൾ|കേസുകൾ|കുടുംബം|ശേഖരം|അടുത്ത്|ക്യൂ|രോഗിയുടെ രേഖകൾ|രോഗവ്യാപനം|കേസ് സംരക്ഷിക്കുക|സംസാരിച്ച് എഴുതുക|ഉപയോക്താവ്|നിങ്ങളെക്കുറിച്ച്|ഈ ഉപകരണത്തിൽ മാത്രം സൂക്ഷിച്ചു; ഡോക്ടറുമായി പങ്കിട്ടിട്ടില്ല.|പേര്|ഫോൺ നമ്പർ|പ്രൊഫൈൽ സംരക്ഷിക്കുക|കൂടുതൽ ഓപ്ഷനുകൾ|അമ്മയും കുഞ്ഞും|ദീർഘകാല പരിചരണം|പദ്ധതികൾ|നിങ്ങളുടെ പേര്|നിങ്ങളുടെ ഫോൺ നമ്പർ',
-mni:'ꯑꯔꯣꯒꯤ|ꯑꯥꯁꯥ ꯊꯧꯔꯥꯡ ꯄꯥꯡꯕ|ꯗꯣꯛꯇꯔ|ꯖꯤꯂꯥ|ꯋꯥꯔꯤ ꯁꯥꯟꯅꯕ|ꯍꯪꯕꯤꯌꯨ|ꯂꯛꯁꯟ|ꯔꯤꯀꯥꯔꯗ|ꯃꯁꯤꯡ|ꯀꯦꯁ|ꯌꯨꯝ ꯃꯤꯁꯤꯡ|ꯁ꯭ꯇꯣꯛ|ꯃꯔꯛꯇꯥ|ꯈꯨꯟꯇꯥꯛ|ꯑꯔꯣꯒꯤ ꯔꯤꯀꯥꯔꯗ|ꯅꯣꯡꯃꯥꯏ ꯊꯣꯛꯄ|ꯀꯦꯁ ꯊꯝꯃꯣ|ꯉꯥꯡꯕꯗꯒꯤ ꯏꯕ|ꯌꯨꯖꯔ|ꯅꯪꯒꯤ ꯃꯔꯃꯗꯥ|ꯃꯁꯤꯒꯤ ꯗꯤꯚꯥꯏꯁꯇ ꯈꯛꯇꯃꯛ ꯊꯝꯂꯦ; ꯗꯣꯛꯇꯔꯒ ꯁꯦꯌꯔ ꯇꯧꯗꯦ꯫|ꯃꯃꯤꯡ|ꯐꯣꯟ ꯅꯝꯕꯔ|ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯊꯝꯃꯣ|ꯑꯇꯣꯞꯄ ꯑꯣꯄꯁꯟ|ꯃꯥ ꯑꯃꯁꯨꯡ ꯑꯉꯥꯡ|ꯃꯇꯝ ꯀꯨꯏꯅꯥ ꯂꯩꯕ ꯄꯥꯟꯗꯝ ꯌꯥꯎꯕ ꯂꯧꯁꯤꯡ|ꯁ꯭ꯀꯤꯝ|ꯅꯪꯒꯤ ꯃꯃꯤꯡ|ꯅꯪꯒꯤ ꯐꯣꯟ ꯅꯝꯕꯔ',
-mr:'रुग्ण|आशा कार्यकर्ता|डॉक्टर|जिल्हा|सल्ला|विचारा|लक्षणे|नोंदी|औषधे|प्रकरणे|कुटुंब|साठा|जवळपास|रांग|रुग्ण नोंदी|रोगाचा उद्रेक|प्रकरण जतन करा|बोलून लिहा|वापरकर्ता|तुमच्याबद्दल|फक्त या डिव्हाइसवर जतन केले; डॉक्टरांशी शेअर केलेले नाही.|नाव|फोन नंबर|प्रोफाइल जतन करा|अधिक पर्याय|आई आणि बाळ|दीर्घकालीन काळजी|योजना|तुमचे नाव|तुमचा फोन नंबर',
-ne:'बिरामी|आशा कार्यकर्ता|चिकित्सक|जिल्ला|परामर्श|सोध्नुहोस्|लक्षणहरू|अभिलेख|औषधिहरू|केसहरू|परिवार|मौज्दात|नजिकै|कतार|बिरामीका अभिलेख|रोगको प्रकोप|केस सुरक्षित गर्नुहोस्|बोलेर लेख्नुहोस्|प्रयोगकर्ता|तपाईंको बारेमा|यो उपकरणमा मात्र सुरक्षित; चिकित्सकसँग साझा गरिएको छैन।|नाम|फोन नम्बर|प्रोफाइल सुरक्षित गर्नुहोस्|थप विकल्पहरू|आमा र बच्चा|दीर्घकालीन हेरचाह|योजनाहरू|तपाईंको नाम|तपाईंको फोन नम्बर',
-or:'ରୋଗୀ|ଆଶା କର୍ମୀ|ଡାକ୍ତର|ଜିଲ୍ଲା|ପରାମର୍ଶ|ପଚାରନ୍ତୁ|ଲକ୍ଷଣ|ରେକର୍ଡ|ଔଷଧ|କେସ୍|ପରିବାର|ମହଜୁଦ|ନିକଟରେ|ଧାଡ଼ି|ରୋଗୀ ରେକର୍ଡ|ରୋଗ ବ୍ୟାପିବା|କେସ୍ ସଞ୍ଚୟ କରନ୍ତୁ|କହି ଲେଖନ୍ତୁ|ବ୍ୟବହାରକାରୀ|ଆପଣଙ୍କ ବିଷୟରେ|କେବଳ ଏହି ଡିଭାଇସରେ ସଞ୍ଚିତ; ଡାକ୍ତରଙ୍କ ସହ ଅଂଶୀଦାର ହୋଇନାହିଁ।|ନାମ|ଫୋନ୍ ନମ୍ବର|ପ୍ରୋଫାଇଲ୍ ସଞ୍ଚୟ କରନ୍ତୁ|ଅଧିକ ବିକଳ୍ପ|ମାଆ ଓ ଶିଶୁ|ଦୀର୍ଘକାଳୀନ ଯତ୍ନ|ଯୋଜନା|ଆପଣଙ୍କ ନାମ|ଆପଣଙ୍କ ଫୋନ୍ ନମ୍ବର',
-pa:'ਮਰੀਜ਼|ਆਸ਼ਾ ਵਰਕਰ|ਡਾਕਟਰ|ਜ਼ਿਲ੍ਹਾ|ਸਲਾਹ|ਪੁੱਛੋ|ਲੱਛਣ|ਰਿਕਾਰਡ|ਦਵਾਈਆਂ|ਕੇਸ|ਪਰਿਵਾਰ|ਭੰਡਾਰ|ਨੇੜੇ|ਕਤਾਰ|ਮਰੀਜ਼ ਦੇ ਰਿਕਾਰਡ|ਬਿਮਾਰੀ ਦਾ ਫੈਲਾਅ|ਕੇਸ ਸੰਭਾਲੋ|ਬੋਲ ਕੇ ਲਿਖੋ|ਵਰਤੋਂਕਾਰ|ਤੁਹਾਡੇ ਬਾਰੇ|ਸਿਰਫ਼ ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਸੰਭਾਲਿਆ; ਡਾਕਟਰ ਨਾਲ ਸਾਂਝਾ ਨਹੀਂ ਕੀਤਾ।|ਨਾਮ|ਫ਼ੋਨ ਨੰਬਰ|ਪ੍ਰੋਫ਼ਾਈਲ ਸੰਭਾਲੋ|ਹੋਰ ਚੋਣਾਂ|ਮਾਂ ਅਤੇ ਬੱਚਾ|ਲੰਬੇ ਸਮੇਂ ਦੀ ਦੇਖਭਾਲ|ਯੋਜਨਾਵਾਂ|ਤੁਹਾਡਾ ਨਾਮ|ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ',
-sa:'रोगी|आशाकार्यकर्ता|वैद्यः|जनपदः|परामर्शः|पृच्छतु|लक्षणानि|अभिलेखाः|औषधानि|प्रकरणानि|कुटुम्बम्|सञ्चयः|समीपे|पङ्क्तिः|रोगिणः अभिलेखाः|रोगप्रसारः|प्रकरणं रक्षतु|भाषित्वा लिखतु|उपयोक्ता|भवतः विषये|केवलम् अस्मिन् उपकरणे रक्षितम्; वैद्येन सह न विभक्तम्।|नाम|दूरभाषाङ्कः|प्रोफाइल् रक्षतु|अधिकविकल्पाः|माता च शिशुः च|दीर्घकालिकपरिचर्या|योजनाः|भवतः नाम|भवतः दूरभाषाङ्कः',
-sat:'ᱵᱤᱨᱤᱫᱤ|ᱟᱥᱟ ᱠᱟᱹᱢᱤ|ᱰᱟᱠᱛᱟᱨ|ᱡᱤᱞᱟ|ᱥᱚᱞᱦᱟ|ᱠᱩᱞᱤ|ᱪᱤᱱᱦᱟ|ᱨᱮᱠᱚᱨᱰ|ᱚᱣᱥᱚᱫ|ᱠᱮᱥ|ᱚᱲᱟᱜ|ᱢᱚᱡᱩᱫ|ᱥᱟᱢᱟᱝ|ᱥᱟᱨᱤ|ᱵᱤᱨᱤᱫᱤ ᱨᱮᱠᱚᱨᱰ|ᱵᱤᱢᱟᱨᱤ ᱯᱷᱮᱞᱟᱣ|ᱠᱮᱥ ᱥᱟᱧᱪᱟᱣ|ᱨᱚᱲ ᱛᱮ ᱚᱞ|ᱵᱮᱵᱚᱦᱟᱨᱤᱡ|ᱟᱢ ᱵᱟᱵᱚᱛ|ᱱᱚᱶᱟ ᱰᱤᱵᱷᱟᱭᱤᱥ ᱨᱮ ᱥᱟᱢᱟᱝ ᱛᱮ ᱥᱟᱧᱪᱟᱣ; ᱰᱟᱠᱛᱟᱨ ᱥᱟᱶ ᱵᱷᱟᱜᱟᱣ ᱵᱟᱝᱟᱹᱭᱟ।|ᱧᱩᱛᱩᱢ|ᱯᱷᱳᱱ ᱱᱚᱢᱵᱚᱨ|ᱯᱨᱚᱯᱷᱟᱭᱤᱞ ᱥᱟᱧᱪᱟᱣ|ᱵᱟᱹᱲᱛᱤ ᱵᱤᱠᱚᱞᱯ|ᱮᱸᱜᱟ ᱟᱨ ᱦᱚᱯᱚᱱ|ᱡᱤᱣᱤ ᱵᱤᱢᱟᱨᱤ ᱥᱩᱥᱨᱟᱹ|ᱥᱠᱤᱢ|ᱟᱢᱟᱜ ᱧᱩᱛᱩᱢ|ᱟᱢᱟᱜ ᱯᱷᱳᱱ ᱱᱚᱢᱵᱚᱨ',
-sd:'مريض|آشا ورڪر|ڊاڪٽر|ضلعو|صلاح|پڇو|علامتون|رڪارڊ|دوائون|ڪيس|خاندان|ذخيرو|ويجهو|قطار|مريض جا رڪارڊ|بيماري پکڙجڻ|ڪيس محفوظ ڪريو|ڳالهائي لکو|استعمال ڪندڙ|توهان بابت|صرف هن ڊوائيس تي محفوظ؛ ڊاڪٽر سان ونڊيو نه ويو آهي.|نالو|فون نمبر|پروفائل محفوظ ڪريو|وڌيڪ اختيار|ماءُ ۽ ٻار|ڊگهي عرصي جي سار سنڀال|اسڪيمون|توهان جو نالو|توهان جو فون نمبر',
-ta:'நோயாளி|ஆஷா பணியாளர்|மருத்துவர்|மாவட்டம்|ஆலோசனை|கேளுங்கள்|அறிகுறிகள்|பதிவுகள்|மருந்துகள்|வழக்குகள்|குடும்பம்|கையிருப்பு|அருகில்|வரிசை|நோயாளி பதிவுகள்|நோய் பரவல்|வழக்கைச் சேமிக்கவும்|பேசித் தட்டச்சு செய்யவும்|பயனர்|உங்களைப் பற்றி|இந்தச் சாதனத்தில் மட்டும் சேமிக்கப்பட்டது; மருத்துவருடன் பகிரப்படவில்லை.|பெயர்|தொலைபேசி எண்|சுயவிவரத்தைச் சேமிக்கவும்|மேலும் விருப்பங்கள்|தாய் மற்றும் குழந்தை|நீண்டகாலப் பராமரிப்பு|திட்டங்கள்|உங்கள் பெயர்|உங்கள் தொலைபேசி எண்',
-te:'రోగి|ఆశా కార్యకర్త|వైద్యుడు|జిల్లా|సంప్రదింపు|అడగండి|లక్షణాలు|రికార్డులు|మందులు|కేసులు|కుటుంబం|నిల్వ|దగ్గరలో|వరుస|రోగి రికార్డులు|వ్యాధి వ్యాప్తి|కేసును భద్రపరచండి|మాట్లాడి రాయండి|వినియోగదారు|మీ గురించి|ఈ పరికరంలో మాత్రమే భద్రపరచబడింది; వైద్యునితో పంచుకోలేదు.|పేరు|ఫోన్ నంబర్|ప్రొఫైల్‌ను భద్రపరచండి|మరిన్ని ఎంపికలు|తల్లి మరియు బిడ్డ|దీర్ఘకాలిక సంరక్షణ|పథకాలు|మీ పేరు|మీ ఫోన్ నంబర్',
-ur:'مریض|آشا کارکن|ڈاکٹر|ضلع|مشورہ|پوچھیں|علامات|ریکارڈ|دوائیں|کیس|خاندان|ذخیرہ|قریب|قطار|مریض کے ریکارڈ|بیماری کا پھیلاؤ|کیس محفوظ کریں|بول کر لکھیں|صارف|آپ کے بارے میں|صرف اس آلے پر محفوظ کیا گیا؛ ڈاکٹر کے ساتھ شیئر نہیں کیا گیا۔|نام|فون نمبر|پروفائل محفوظ کریں|مزید اختیارات|ماں اور بچہ|طویل مدتی نگہداشت|اسکیمیں|آپ کا نام|آپ کا فون نمبر'
+as:'ৰোগী|আশা কৰ্মী|চিকিৎসক|জিলা|পৰামৰ্শ|সোধক|লক্ষণ|নথি|ঔষধ|মামলা|পৰিয়াল|মজুত|ওচৰত|শাৰী|ৰোগীৰ নথি|ৰোগৰ প্ৰাদুৰ্ভাৱ|মামলা সংৰক্ষণ|কথা কৈ লিখক|ব্যৱহাৰকাৰী|আপোনাৰ বিষয়ে|কেৱল এই ডিভাইচত সংৰক্ষিত; চিকিৎসকৰ সৈতে ভাগ কৰা নহয়।|নাম|ফোন নম্বৰ|প্ৰফাইল সংৰক্ষণ|অতিৰিক্ত বিকল্প|মাতৃ আৰু শিশু|দীৰ্ঘম্যাদী ৰোগৰ যত্ন|আঁচনি|আপোনাৰ নাম|আপোনাৰ ফোন নম্বৰ|প্ৰস্থান কৰক',
+bn:'রোগী|আশা কর্মী|চিকিৎসক|জেলা|পরামর্শ|জিজ্ঞাসা করুন|উপসর্গ|রেকর্ড|ওষুধ|কেস|পরিবার|মজুত|কাছাকাছি|সারি|রোগীর রেকর্ড|রোগের প্রাদুর্ভাব|কেস সংরক্ষণ|কথা বলে লিখুন|ব্যবহারকারী|আপনার সম্পর্কে|শুধু এই ডিভাইসে সংরক্ষিত; চিকিৎসকের সঙ্গে ভাগ করা হয় না।|নাম|ফোন নম্বর|প্রোফাইল সংরক্ষণ|আরও বিকল্প|মা ও শিশু|দীর্ঘস্থায়ী রোগের যত্ন|সরকারি প্রকল্প|আপনার নাম|আপনার ফোন নম্বর|সাইন আউট',
+brx:'रोगी|आशा खामानि|डाक्टर|जिला|सोलोंथाइ|सों|लक्षण|रेखाथाय|औषध|केस|नखर|मजुत|आसिनि|सारि|रोगी रेखाथाय|बेमारि फेहेरनाय|केस थिना|बुंनानै लिर|बाहायगिरि|नोंनि सोमोन्दै|बे डिभाइसआवसो दोननाय; डाक्टरजों शेयार खालामनाय नङा।|मुं|फोन नाम्बार|प्रफाइल थिना|बां सोलोंथाइ|आइ आरो फिसा|गाहायनि बेमारि जथुम्मा|आखाय|नोंनि मुं|नोंनि फोन नाम्बार|ओंखारलां',
+doi:'मरीज|आशा कर्मी|डाक्टर|जिला|सलाह|पुच्छो|लच्छण|रिकार्ड|दवाइयां|केस|परवार|भंडार|नेड़े|कतार|मरीज रिकार्ड|बीमारी फैलना|केस बचाओ|बोलियै लिखो|बरतूनी|तुंदे बारे|सिर्फ इस डिवाइस पर बचाया; डाक्टर कन्नै सांझा नेईं कीता।|नांऽ|फोन नंबर|प्रोफाइल बचाओ|होर विकल्प|मां ते बच्चा|लम्मे समें दी बीमारी दी देखभाल|योजनां|तुंदा नांऽ|तुंदा फोन नंबर|बाहर निकलो',
+gu:'દર્દી|આશા કાર્યકર|ડૉક્ટર|જિલ્લો|પરામર્શ|પૂછો|લક્ષણો|રેકોર્ડ|દવાઓ|કેસ|પરિવાર|જથ્થો|નજીકમાં|કતાર|દર્દીના રેકોર્ડ|રોગચાળો|કેસ સાચવો|બોલીને લખો|વપરાશકર્તા|તમારા વિશે|ફક્ત આ ઉપકરણમાં સાચવ્યું; ડૉક્ટર સાથે શેર કર્યું નથી.|નામ|ફોન નંબર|પ્રોફાઇલ સાચવો|વધુ વિકલ્પો|માતા અને બાળક|દીર્ઘકાલીન સંભાળ|યોજનાઓ|તમારું નામ|તમારો ફોન નંબર|સાઇન આઉટ',
+hi:'मरीज़|आशा कार्यकर्ता|डॉक्टर|ज़िला|परामर्श|पूछें|लक्षण|रिकॉर्ड|दवाइयाँ|मामले|परिवार|भंडार|पास में|कतार|मरीज़ के रिकॉर्ड|बीमारी का फैलाव|मामला सहेजें|बोलकर लिखें|उपयोगकर्ता|आपके बारे में|सिर्फ़ इस डिवाइस पर सहेजा गया; डॉक्टर के साथ साझा नहीं किया गया।|नाम|फ़ोन नंबर|प्रोफ़ाइल सहेजें|और विकल्प|माँ और बच्चा|दीर्घकालिक देखभाल|योजनाएँ|आपका नाम|आपका फ़ोन नंबर|साइन आउट',
+kn:'ರೋಗಿ|ಆಶಾ ಕಾರ್ಯಕರ್ತೆ|ವೈದ್ಯರು|ಜಿಲ್ಲೆ|ಸಮಾಲೋಚನೆ|ಕೇಳಿ|ಲಕ್ಷಣಗಳು|ದಾಖಲೆಗಳು|ಔಷಧಿಗಳು|ಪ್ರಕರಣಗಳು|ಕುಟುಂಬ|ದಾಸ್ತಾನು|ಹತ್ತಿರದಲ್ಲಿ|ಸರದಿ|ರೋಗಿಯ ದಾಖಲೆಗಳು|ರೋಗ ಹರಡುವಿಕೆ|ಪ್ರಕರಣ ಉಳಿಸಿ|ಮಾತನಾಡಿ ಬರೆಯಿರಿ|ಬಳಕೆದಾರರು|ನಿಮ್ಮ ಬಗ್ಗೆ|ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಸಲಾಗಿದೆ; ವೈದ್ಯರೊಂದಿಗೆ ಹಂಚಿಕೊಂಡಿಲ್ಲ.|ಹೆಸರು|ಫೋನ್ ಸಂಖ್ಯೆ|ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ|ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು|ತಾಯಿ ಮತ್ತು ಮಗು|ದೀರ್ಘಕಾಲದ ಆರೈಕೆ|ಯೋಜನೆಗಳು|ನಿಮ್ಮ ಹೆಸರು|ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ|ಸೈನ್ ಔಟ್',
+ks:'مریض|آشا ورکر|ڈاکٹر|ضلع|مشورہ|پُچھِو|علامتہٕ|ریکارڈ|دواہ|کیس|خاندان|ذخیرہ|نزدیک|قطار|مریض ریکارڈ|بیماری ہٕند پھیلاؤ|کیس محفوظ کٔرِو|بوزِتھ لیکھو|صارف|تُہند بارے|صرف یتھ ڈیوایسَس منز محفوظ؛ ڈاکٹرَس سۭتۍ شیئر نہ।|ناو|فون نمبر|پروفائل محفوظ کٔرِو|مزید اختیار|ماجہ تہٕ بچہ|مزمن بیماری ہٕند نگہداشت|سکیمہٕ|تُہند ناو|تُہند فون نمبر|سائن آؤٹ',
+kok:'रुग्ण|आशा कार्यकर्ती|दोतोर|जिल्लो|सल्लो|विचार|लक्षणां|नोंदी|औषधां|केस|कुटुंब|साठो|लागीं|रांग|रुग्ण नोंदी|रोगाचो उद्रेक|केस जतन करात|उलोवन बरयात|वापरपी|तुमचे विशीं|फकत ह्या उपकरणार जतन केलां; दोतोराकडेन वांटूंक ना.|नांव|फोन क्रमांक|प्रोफायल जतन करात|आनी पर्याय|आवय आनी भुरगो|दीर्घकालीन सांभाळ|योजना|तुमचें नांव|तुमचो फोन क्रमांक|साइन आऊट',
+mai:'रोगी|आशा कार्यकर्ता|चिकित्सक|जिला|परामर्श|पूछू|लक्षण|अभिलेख|औषध|मामिला|परिवार|भंडार|नजदीक|कतार|रोगी अभिलेख|रोगक प्रसार|मामिला सुरक्षित करू|बाजि कऽ लिखू|उपयोगकर्ता|अहाँक बारेमे|केवल एहि उपकरण पर सुरक्षित; चिकित्सक संग साझा नहि कएल गेल।|नाम|फोन नंबर|प्रोफाइल सुरक्षित करू|आओर विकल्प|माय आ बच्चा|दीर्घकालीन देखभाल|योजना|अहाँक नाम|अहाँक फोन नंबर|साइन आउट',
+ml:'രോഗി|ആശാ പ്രവർത്തക|ഡോക്ടർ|ജില്ല|കൺസൾട്ടേഷൻ|ചോദിക്കുക|ലക്ഷണങ്ങൾ|രേഖകൾ|മരുന്നുകൾ|കേസുകൾ|കുടുംബം|ശേഖരം|അടുത്ത്|ക്യൂ|രോഗിയുടെ രേഖകൾ|രോഗവ്യാപനം|കേസ് സംരക്ഷിക്കുക|സംസാരിച്ച് എഴുതുക|ഉപയോക്താവ്|നിങ്ങളെക്കുറിച്ച്|ഈ ഉപകരണത്തിൽ മാത്രം സൂക്ഷിച്ചു; ഡോക്ടറുമായി പങ്കിട്ടിട്ടില്ല.|പേര്|ഫോൺ നമ്പർ|പ്രൊഫൈൽ സംരക്ഷിക്കുക|കൂടുതൽ ഓപ്ഷനുകൾ|അമ്മയും കുഞ്ഞും|ദീർഘകാല പരിചരണം|പദ്ധതികൾ|നിങ്ങളുടെ പേര്|നിങ്ങളുടെ ഫോൺ നമ്പർ|സൈൻ ഔട്ട്',
+mni:'ꯑꯔꯣꯒꯤ|ꯑꯥꯁꯥ ꯊꯧꯔꯥꯡ ꯄꯥꯡꯕ|ꯗꯣꯛꯇꯔ|ꯖꯤꯂꯥ|ꯋꯥꯔꯤ ꯁꯥꯟꯅꯕ|ꯍꯪꯕꯤꯌꯨ|ꯂꯛꯁꯟ|ꯔꯤꯀꯥꯔꯗ|ꯃꯁꯤꯡ|ꯀꯦꯁ|ꯌꯨꯝ ꯃꯤꯁꯤꯡ|ꯁ꯭ꯇꯣꯛ|ꯃꯔꯛꯇꯥ|ꯈꯨꯟꯇꯥꯛ|ꯑꯔꯣꯒꯤ ꯔꯤꯀꯥꯔꯗ|ꯅꯣꯡꯃꯥꯏ ꯊꯣꯛꯄ|ꯀꯦꯁ ꯊꯝꯃꯣ|ꯉꯥꯡꯕꯗꯒꯤ ꯏꯕ|ꯌꯨꯖꯔ|ꯅꯪꯒꯤ ꯃꯔꯃꯗꯥ|ꯃꯁꯤꯒꯤ ꯗꯤꯚꯥꯏꯁꯇ ꯈꯛꯇꯃꯛ ꯊꯝꯂꯦ; ꯗꯣꯛꯇꯔꯒ ꯁꯦꯌꯔ ꯇꯧꯗꯦ꯫|ꯃꯃꯤꯡ|ꯐꯣꯟ ꯅꯝꯕꯔ|ꯄ꯭ꯔꯣꯐꯥꯏꯜ ꯊꯝꯃꯣ|ꯑꯇꯣꯞꯄ ꯑꯣꯄꯁꯟ|ꯃꯥ ꯑꯃꯁꯨꯡ ꯑꯉꯥꯡ|ꯃꯇꯝ ꯀꯨꯏꯅꯥ ꯂꯩꯕ ꯄꯥꯟꯗꯝ ꯌꯥꯎꯕ ꯂꯧꯁꯤꯡ|ꯁ꯭ꯀꯤꯝ|ꯅꯪꯒꯤ ꯃꯃꯤꯡ|ꯅꯪꯒꯤ ꯐꯣꯟ ꯅꯝꯕꯔ|ꯁꯥꯏꯟ ꯑꯥꯎꯠ',
+mr:'रुग्ण|आशा कार्यकर्ता|डॉक्टर|जिल्हा|सल्ला|विचारा|लक्षणे|नोंदी|औषधे|प्रकरणे|कुटुंब|साठा|जवळपास|रांग|रुग्ण नोंदी|रोगाचा उद्रेक|प्रकरण जतन करा|बोलून लिहा|वापरकर्ता|तुमच्याबद्दल|फक्त या डिव्हाइसवर जतन केले; डॉक्टरांशी शेअर केलेले नाही.|नाव|फोन नंबर|प्रोफाइल जतन करा|अधिक पर्याय|आई आणि बाळ|दीर्घकालीन काळजी|योजना|तुमचे नाव|तुमचा फोन नंबर|साइन आउट',
+ne:'बिरामी|आशा कार्यकर्ता|चिकित्सक|जिल्ला|परामर्श|सोध्नुहोस्|लक्षणहरू|अभिलेख|औषधिहरू|केसहरू|परिवार|मौज्दात|नजिकै|कतार|बिरामीका अभिलेख|रोगको प्रकोप|केस सुरक्षित गर्नुहोस्|बोलेर लेख्नुहोस्|प्रयोगकर्ता|तपाईंको बारेमा|यो उपकरणमा मात्र सुरक्षित; चिकित्सकसँग साझा गरिएको छैन।|नाम|फोन नम्बर|प्रोफाइल सुरक्षित गर्नुहोस्|थप विकल्पहरू|आमा र बच्चा|दीर्घकालीन हेरचाह|योजनाहरू|तपाईंको नाम|तपाईंको फोन नम्बर|साइन आउट',
+or:'ରୋଗୀ|ଆଶା କର୍ମୀ|ଡାକ୍ତର|ଜିଲ୍ଲା|ପରାମର୍ଶ|ପଚାରନ୍ତୁ|ଲକ୍ଷଣ|ରେକର୍ଡ|ଔଷଧ|କେସ୍|ପରିବାର|ମହଜୁଦ|ନିକଟରେ|ଧାଡ଼ି|ରୋଗୀ ରେକର୍ଡ|ରୋଗ ବ୍ୟାପିବା|କେସ୍ ସଞ୍ଚୟ କରନ୍ତୁ|କହି ଲେଖନ୍ତୁ|ବ୍ୟବହାରକାରୀ|ଆପଣଙ୍କ ବିଷୟରେ|କେବଳ ଏହି ଡିଭାଇସରେ ସଞ୍ଚିତ; ଡାକ୍ତରଙ୍କ ସହ ଅଂଶୀଦାର ହୋଇନାହିଁ।|ନାମ|ଫୋନ୍ ନମ୍ବର|ପ୍ରୋଫାଇଲ୍ ସଞ୍ଚୟ କରନ୍ତୁ|ଅଧିକ ବିକଳ୍ପ|ମାଆ ଓ ଶିଶୁ|ଦୀର୍ଘକାଳୀନ ଯତ୍ନ|ଯୋଜନା|ଆପଣଙ୍କ ନାମ|ଆପଣଙ୍କ ଫୋନ୍ ନମ୍ବର|ସାଇନ୍ ଆଉଟ୍',
+pa:'ਮਰੀਜ਼|ਆਸ਼ਾ ਵਰਕਰ|ਡਾਕਟਰ|ਜ਼ਿਲ੍ਹਾ|ਸਲਾਹ|ਪੁੱਛੋ|ਲੱਛਣ|ਰਿਕਾਰਡ|ਦਵਾਈਆਂ|ਕੇਸ|ਪਰਿਵਾਰ|ਭੰਡਾਰ|ਨੇੜੇ|ਕਤਾਰ|ਮਰੀਜ਼ ਦੇ ਰਿਕਾਰਡ|ਬਿਮਾਰੀ ਦਾ ਫੈਲਾਅ|ਕੇਸ ਸੰਭਾਲੋ|ਬੋਲ ਕੇ ਲਿਖੋ|ਵਰਤੋਂਕਾਰ|ਤੁਹਾਡੇ ਬਾਰੇ|ਸਿਰਫ਼ ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਸੰਭਾਲਿਆ; ਡਾਕਟਰ ਨਾਲ ਸਾਂਝਾ ਨਹੀਂ ਕੀਤਾ।|ਨਾਮ|ਫ਼ੋਨ ਨੰਬਰ|ਪ੍ਰੋਫ਼ਾਈਲ ਸੰਭਾਲੋ|ਹੋਰ ਚੋਣਾਂ|ਮਾਂ ਅਤੇ ਬੱਚਾ|ਲੰਬੇ ਸਮੇਂ ਦੀ ਦੇਖਭਾਲ|ਯੋਜਨਾਵਾਂ|ਤੁਹਾਡਾ ਨਾਮ|ਤੁਹਾਡਾ ਫ਼ੋਨ ਨੰਬਰ|ਸਾਈਨ ਆਊਟ',
+sa:'रोगी|आशाकार्यकर्ता|वैद्यः|जनपदः|परामर्शः|पृच्छतु|लक्षणानि|अभिलेखाः|औषधानि|प्रकरणानि|कुटुम्बम्|सञ्चयः|समीपे|पङ्क्तिः|रोगिणः अभिलेखाः|रोगप्रसारः|प्रकरणं रक्षतु|भाषित्वा लिखतु|उपयोक्ता|भवतः विषये|केवलम् अस्मिन् उपकरणे रक्षितम्; वैद्येन सह न विभक्तम्।|नाम|दूरभाषाङ्कः|प्रोफाइल् रक्षतु|अधिकविकल्पाः|माता च शिशुः च|दीर्घकालिकपरिचर्या|योजनाः|भवतः नाम|भवतः दूरभाषाङ्कः|निर्गम्यताम्',
+sat:'ᱵᱤᱨᱤᱫᱤ|ᱟᱥᱟ ᱠᱟᱹᱢᱤ|ᱰᱟᱠᱛᱟᱨ|ᱡᱤᱞᱟ|ᱥᱚᱞᱦᱟ|ᱠᱩᱞᱤ|ᱪᱤᱱᱦᱟ|ᱨᱮᱠᱚᱨᱰ|ᱚᱣᱥᱚᱫ|ᱠᱮᱥ|ᱚᱲᱟᱜ|ᱢᱚᱡᱩᱫ|ᱥᱟᱢᱟᱝ|ᱥᱟᱨᱤ|ᱵᱤᱨᱤᱫᱤ ᱨᱮᱠᱚᱨᱰ|ᱵᱤᱢᱟᱨᱤ ᱯᱷᱮᱞᱟᱣ|ᱠᱮᱥ ᱥᱟᱧᱪᱟᱣ|ᱨᱚᱲ ᱛᱮ ᱚᱞ|ᱵᱮᱵᱚᱦᱟᱨᱤᱡ|ᱟᱢ ᱵᱟᱵᱚᱛ|ᱱᱚᱶᱟ ᱰᱤᱵᱷᱟᱭᱤᱥ ᱨᱮ ᱥᱟᱢᱟᱝ ᱛᱮ ᱥᱟᱧᱪᱟᱣ; ᱰᱟᱠᱛᱟᱨ ᱥᱟᱶ ᱵᱷᱟᱜᱟᱣ ᱵᱟᱝᱟᱹᱭᱟ।|ᱧᱩᱛᱩᱢ|ᱯᱷᱳᱱ ᱱᱚᱢᱵᱚᱨ|ᱯᱨᱚᱯᱷᱟᱭᱤᱞ ᱥᱟᱧᱪᱟᱣ|ᱵᱟᱹᱲᱛᱤ ᱵᱤᱠᱚᱞᱯ|ᱮᱸᱜᱟ ᱟᱨ ᱦᱚᱯᱚᱱ|ᱡᱤᱣᱤ ᱵᱤᱢᱟᱨᱤ ᱥᱩᱥᱨᱟᱹ|ᱥᱠᱤᱢ|ᱟᱢᱟᱜ ᱧᱩᱛᱩᱢ|ᱟᱢᱟᱜ ᱯᱷᱳᱱ ᱱᱚᱢᱵᱚᱨ|ᱥᱟᱭᱤᱱ ᱟᱣᱩᱴ',
+sd:'مريض|آشا ورڪر|ڊاڪٽر|ضلعو|صلاح|پڇو|علامتون|رڪارڊ|دوائون|ڪيس|خاندان|ذخيرو|ويجهو|قطار|مريض جا رڪارڊ|بيماري پکڙجڻ|ڪيس محفوظ ڪريو|ڳالهائي لکو|استعمال ڪندڙ|توهان بابت|صرف هن ڊوائيس تي محفوظ؛ ڊاڪٽر سان ونڊيو نه ويو آهي.|نالو|فون نمبر|پروفائل محفوظ ڪريو|وڌيڪ اختيار|ماءُ ۽ ٻار|ڊگهي عرصي جي سار سنڀال|اسڪيمون|توهان جو نالو|توهان جو فون نمبر|سائن آئوٽ',
+ta:'நோயாளி|ஆஷா பணியாளர்|மருத்துவர்|மாவட்டம்|ஆலோசனை|கேளுங்கள்|அறிகுறிகள்|பதிவுகள்|மருந்துகள்|வழக்குகள்|குடும்பம்|கையிருப்பு|அருகில்|வரிசை|நோயாளி பதிவுகள்|நோய் பரவல்|வழக்கைச் சேமிக்கவும்|பேசித் தட்டச்சு செய்யவும்|பயனர்|உங்களைப் பற்றி|இந்தச் சாதனத்தில் மட்டும் சேமிக்கப்பட்டது; மருத்துவருடன் பகிரப்படவில்லை.|பெயர்|தொலைபேசி எண்|சுயவிவரத்தைச் சேமிக்கவும்|மேலும் விருப்பங்கள்|தாய் மற்றும் குழந்தை|நீண்டகாலப் பராமரிப்பு|திட்டங்கள்|உங்கள் பெயர்|உங்கள் தொலைபேசி எண்|வெளியேறு',
+te:'రోగి|ఆశా కార్యకర్త|వైద్యుడు|జిల్లా|సంప్రదింపు|అడగండి|లక్షణాలు|రికార్డులు|మందులు|కేసులు|కుటుంబం|నిల్వ|దగ్గరలో|వరుస|రోగి రికార్డులు|వ్యాధి వ్యాప్తి|కేసును భద్రపరచండి|మాట్లాడి రాయండి|వినియోగదారు|మీ గురించి|ఈ పరికరంలో మాత్రమే భద్రపరచబడింది; వైద్యునితో పంచుకోలేదు.|పేరు|ఫోన్ నంబర్|ప్రొఫైల్‌ను భద్రపరచండి|మరిన్ని ఎంపికలు|తల్లి మరియు బిడ్డ|దీర్ఘకాలిక సంరక్షణ|పథకాలు|మీ పేరు|మీ ఫోన్ నంబర్|సైన్ అవుట్',
+ur:'مریض|آشا کارکن|ڈاکٹر|ضلع|مشورہ|پوچھیں|علامات|ریکارڈ|دوائیں|کیس|خاندان|ذخیرہ|قریب|قطار|مریض کے ریکارڈ|बیماری کا پھیلاؤ|کیس محفوظ کریں|بول کر لکھیں|صارف|آپ کے بارے میں|صرف اس آلے پر محفوظ کیا گیا؛ ڈاکٹر کے ساتھ شیئر نہیں کیا گیا۔|نام|فون نمبر|پروفائل محفوظ کریں|مزید اختیارات|ماں اور بچہ|طویل مدتی نگہداشت|اسکیمیں|آپ کا نام|آپ کا فون نمبر|سائن آؤٹ'
 };
 const CORE_KEYS=['Patient name','Age','Village','Temp (°C)','Danger signs','Notes','My cases','Save','Search','Date','Urgency','None','Loading...','Blood pressure','Blood sugar','Add reading','My health record'];
 const CORE_TX={
@@ -386,7 +455,7 @@ function applyLocale(){const rtl=['ks','sd','ur'].includes(LANG);document.docume
 }
 const RL={Patient:[['asha','🎥','Consult'],['chat','💬','Ask'],['sym','🤒','Symptoms'],['rec','📋','Records'],['med','💊','Medicines'],['near','📍','Near me']],ASHA:[['asha-home','🧑‍⚕️','Home'],['asha','📝','Record case'],['hh','🏠','Household'],['med','💊','Medicines & stock'],['chat','💬','Ask'],['sym','🤒','Symptoms'],['near','📍','Near me']],Doctor:[['doc','👨‍⚕️','Queue'],['patients','📋','Patient records'],['near','📍','Near me']]};
 function setRole(r){if(r==='Doctor'&&db&&!staff){$('#sync').textContent='🔒 Doctor view needs staff sign-in';return}
- curRole=r;$('#nav').innerHTML=RL[r].map(x=>`<button data-g="${x[0]}"><i>${x[1]}</i>${esc(L(x[2]))}</button>`).join('');$('#ah').textContent=r==='Patient'?'Book a consultation':'ASHA mode: record a case';$('#save').textContent=L('Save case');$('#mic').textContent='🎤 '+L('Speak');go(r==='ASHA'?'asha-home':RL[r][0][0])}
+ curRole=r;$('#nav').innerHTML=RL[r].map(x=>`<button data-g="${x[0]}"><i>${x[1]}</i>${esc(L(x[2]))}</button>`).join('');$('#ah').textContent=r==='Patient'?'Book a consultation: Send details to doctor':'ASHA mode: record a case';$('#save').textContent=r==='Patient'?'✉️ Send to doctor':L('Save case');if($('#casesHeading'))$('#casesHeading').textContent=r==='Patient'?'My sent messages & consultations':'ASHA recorded field cases';$('#mic').textContent='🎤 '+L('Speak');go(r==='ASHA'?'asha-home':r==='Doctor'?'doc':RL[r][0][0]);if(r==='Doctor'){doctor();patientRecords()}else{mine()}}
 $('#t-asha-home').onclick=e=>{const b=e.target.closest('[data-asha-go]');if(b)go(b.dataset.ashaGo)};
 function refreshLocaleContent(){
  const active=$('section.on')?.id.replace('t-','');
@@ -423,7 +492,7 @@ $('#alertBtn').onclick=async()=>{if(!db||!topAl)return;try{await db.doc('alerts/
 // mother and child
 const VAC=[[0,'Birth','BCG, OPV-0, Hep B birth dose'],[42,'6 weeks','OPV-1, Penta-1, Rota-1, fIPV-1, PCV-1'],[70,'10 weeks','OPV-2, Penta-2, Rota-2'],[98,'14 weeks','OPV-3, Penta-3, Rota-3, fIPV-2, PCV-2'],[274,'9 months','MR-1, fIPV-3, PCV booster, Vitamin A'],[486,'16 months','MR-2, DPT booster, OPV booster, JE (where given)']],ANC=[[0,12,'Visit 1'],[14,26,'Visit 2'],[28,34,'Visit 3'],[36,40,'Visit 4']];
 const fd=d=>d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}),add=(d,n)=>new Date(d.getTime()+n*864e5);
-function stt(due,done){if(done)return'<span class="t green">Done ✓</span>';const n=(due-Date.now())/864e5;return n<0?'<span class="t red">Overdue</span>':n<=14?'<span class="t amber">Due soon</span>':'<span class="t green">Upcoming</span>'}
+function stt(due,done){if(done)return'<span class="t green">Done ✓</span>';const n=(due-Date.now())/864e5;return n<0?'<span class="t red">Overdue</span>':n<=14?'<span class="t yellow">Due soon</span>':'<span class="t green">Upcoming</span>'}
 function mch(){const m=LS.g('mch',{done:{}});let h='';
  if(m.lmp){const l=new Date(m.lmp);h+=`<div class="card"><b>🤰 Mother</b><div>Week ${Math.floor((Date.now()-l)/6048e5)} · Expected delivery <b>${fd(add(l,280))}</b></div>`+ANC.map((a,i)=>`<div><label><input type="checkbox" data-k="a${i}" ${m.done['a'+i]?'checked':''} style="width:auto"> ${a[2]}: ${fd(add(l,a[0]*7))} to ${fd(add(l,a[1]*7))}</label> ${stt(add(l,a[1]*7),m.done['a'+i])}</div>`).join('')+'<div class="mu">Bleeding, severe headache, swelling or less baby movement: go to the PHC the same day.</div></div>'}
  if(m.dob){const b=new Date(m.dob);h+='<div class="card"><b>👶 Child</b>'+VAC.map((v,i)=>`<div><label><input type="checkbox" data-k="v${i}" ${m.done['v'+i]?'checked':''} style="width:auto"> <b>${v[1]}</b> (${fd(add(b,v[0]))}): ${esc(v[2])}</label> ${stt(add(b,v[0]+14),m.done['v'+i])}</div>`).join('')+'</div>'}
@@ -436,7 +505,7 @@ $('#cd').value=new Date().toISOString().slice(0,10);
 function chr(){const c=LS.g('chr',{r:[],iv:14}),rs=c.r,bp=rs.filter(x=>x.t==='BP'),sg=rs.filter(x=>x.t==='Sugar');
  const g=(a,lo,hi)=>{if(!a.length)return'<div class="mu">No readings yet.</div>';const z=a.slice(-10),pt=z.map((x,i)=>[10+i*(280/Math.max(1,z.length-1)),100-(Math.min(hi,Math.max(lo,x.a))-lo)/(hi-lo)*90]);return`<svg viewBox="0 0 300 110" style="width:100%"><polyline points="${pt.map(q=>q.join(',')).join(' ')}" style="fill:none;stroke:var(--pr);stroke-width:2"/>${pt.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="3" style="fill:var(--pr)"/>`).join('')}</svg>`};
  const l=rs[rs.length-1];let h='';
- if(l){const b=l.t==='BP'?(l.a>=180||l.b>=120?['red','Very high BP. Go to the PHC today.']:l.a>=140||l.b>=90?['amber','High BP. See a doctor this week.']:['green','BP is in a good range.']):(l.a>=300||l.a<70?['red','Sugar is very high or low. Go to the PHC today.']:l.a>=180?['amber','Sugar is high. Talk to your doctor.']:['green','Sugar looks fine.']);
+ if(l){const b=l.t==='BP'?(l.a>=180||l.b>=120?['red','Very high BP. Go to the PHC today.']:l.a>=140||l.b>=90?['yellow','High BP. See a doctor this week.']:['green','BP is in a good range.']):(l.a>=300||l.a<70?['red','Sugar is very high or low. Go to the PHC today.']:l.a>=180?['yellow','Sugar is high. Talk to your doctor.']:['green','Sugar looks fine.']);
   h+=`<div class="card"><span class="t ${b[0]}">${b[0].toUpperCase()}</span> ${b[1]}<div class="mu">Next check-up: ${fd(add(new Date(l.d),c.iv))} ${stt(add(new Date(l.d),c.iv),false)}</div></div>`}
  h+='<div class="card"><b>Blood pressure (top number)</b>'+g(bp,80,200)+'<b>Blood sugar</b>'+g(sg,50,350)+'</div>';
  $('#cout').innerHTML=h+rs.slice(-5).reverse().map(x=>`<div class="mu">${esc(x.d)} · ${x.t==='BP'?x.a+'/'+x.b:x.a+' mg/dL'}</div>`).join('')}
@@ -444,19 +513,56 @@ $('#cadd').onclick=()=>{const t=$('#ct').value,v=$('#cv').value.trim(),m=$('#cms
  if(t==='BP'){const x=v.match(/^(\d{2,3})\s*\/\s*(\d{2,3})$/);if(!x){m.textContent='Enter BP like 120/80.';return}o={t,a:+x[1],b:+x[2]}}else{const n=+v;if(!(n>=20&&n<=600)){m.textContent='Enter sugar in mg/dL, like 110.';return}o={t,a:n}}
  o.d=$('#cd').value||new Date().toISOString().slice(0,10);const c=LS.g('chr',{r:[],iv:14});c.r.push(o);c.r.sort((p,q)=>p.d<q.d?-1:1);c.iv=+$('#civ').value;LS.s('chr',c);$('#cv').value='';m.textContent='Added ✓ (stays on this phone)';chr()};
 mch();chr();
-// recorded voice note, 25 second limit, stays under the database size cap
-let vnData=null,rec=null,vnT=null;
-function clearVn(){vnData=null;$('#vp').removeAttribute('src');$('#vp').style.display='none';$('#vdel').style.display='none';$('#vm').textContent='Voice note: up to 25 seconds. Works offline.'}
+// Recorded voice note, 25 second limit, stays under the database size cap.
+let vnData=null,rec=null,vnT=null,vnStream=null,vnStarting=false,vnDiscardOnStop=false,vnAttempt=0;
+function stopVnStream(){if(vnStream){vnStream.getTracks().forEach(t=>t.stop());vnStream=null}}
+function clearVn(){
+ vnData=null;vnAttempt++;vnStarting=false;vnDiscardOnStop=true;
+ if(rec&&rec.state!=='inactive'){try{rec.stop()}catch(e){}}
+ stopVnStream();clearInterval(vnT);vnT=null;
+ $('#vn').disabled=false;$('#vn').textContent='🎙 Record voice note';
+ $('#vp').pause();$('#vp').removeAttribute('src');$('#vp').style.display='none';$('#vdel').style.display='none';$('#vm').textContent='Voice note: up to 25 seconds. Works offline.'
+}
 $('#vdel').onclick=clearVn;
-$('#vn').onclick=async()=>{const m=$('#vm');if(rec&&rec.state==='recording'){rec.stop();return}
- if(!navigator.mediaDevices||!window.MediaRecorder){m.textContent='Recording is not supported in this browser. Try Chrome.';return}
- try{const st=await navigator.mediaDevices.getUserMedia({audio:true}),mt=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(t=>MediaRecorder.isTypeSupported(t))||'',ch=[];let n=0;
-  rec=new MediaRecorder(st,{...(mt?{mimeType:mt}:{}),audioBitsPerSecond:16000});rec.ondataavailable=e=>ch.push(e.data);
-  rec.onstop=()=>{clearInterval(vnT);st.getTracks().forEach(t=>t.stop());$('#vn').textContent='🎙 Record voice note';const r=new FileReader();r.onload=()=>{if(r.result.length>100000){m.textContent='Recording too large. Try a shorter note.';return}vnData=r.result;$('#vp').src=vnData;$('#vp').style.display='block';$('#vdel').style.display='inline-block';m.textContent='Voice note ready ✓'};r.readAsDataURL(new Blob(ch,{type:rec.mimeType}))};
-  rec.start();m.textContent='Recording... speak now';$('#vn').textContent='⏹ Stop (25)';vnT=setInterval(()=>{n++;$('#vn').textContent='⏹ Stop ('+(25-n)+')';if(n>=25)rec.stop()},1000)}
- catch(e){m.textContent=e.name==='NotFoundError'?'No microphone found on this device.':'The microphone is blocked in this preview. It works on your own deployed site.'}};
+$('#vn').onclick=async()=>{
+ const m=$('#vm'),button=$('#vn');
+ if(vnStarting)return;
+ if(rec&&rec.state==='recording'){rec.stop();return}
+ if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){m.textContent='Voice recording is not supported by this browser. Try an updated Chrome browser or the Android app.';return}
+ if(!window.isSecureContext){m.textContent='Microphone access requires a secure page (HTTPS) or the installed Android app. Open the deployed HTTPS app instead of a local file.';return}
+ vnStarting=true;const attempt=++vnAttempt;button.disabled=true;button.textContent='Allow microphone…';m.textContent='Requesting microphone permission…';
+ let stream=null;
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({audio:true});
+  if(attempt!==vnAttempt){stream.getTracks().forEach(t=>t.stop());return}
+  vnStream=stream;
+  const types=['audio/webm;codecs=opus','audio/webm','audio/mp4'],mt=typeof MediaRecorder.isTypeSupported==='function'?types.find(t=>MediaRecorder.isTypeSupported(t)):'',chunks=[];
+  const recorder=new MediaRecorder(stream,{...(mt?{mimeType:mt}:{}),audioBitsPerSecond:16000});rec=recorder;vnDiscardOnStop=false;let seconds=0;
+  recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  recorder.onerror=()=>{m.textContent='Recording failed. Check microphone permission and try again.'};
+  recorder.onstop=()=>{
+   clearInterval(vnT);vnT=null;stopVnStream();if(rec===recorder)rec=null;
+   button.disabled=false;button.textContent='🎙 Record voice note';
+   if(vnDiscardOnStop){vnDiscardOnStop=false;return}
+   const blob=new Blob(chunks,{type:recorder.mimeType||chunks[0]?.type||'audio/webm'});
+   if(!blob.size){m.textContent='No audio was recorded. Allow microphone access and try again.';return}
+   const reader=new FileReader();
+   reader.onerror=()=>{m.textContent='Could not prepare the voice note. Please record it again.'};
+   reader.onload=()=>{if(attempt!==vnAttempt)return;if(typeof reader.result!=='string'||reader.result.length>100000){m.textContent='Recording is too large to attach. Try a shorter note.';return}
+    vnData=reader.result;$('#vp').src=vnData;$('#vp').style.display='block';$('#vdel').style.display='inline-block';m.textContent='Voice note ready ✓'};
+   reader.readAsDataURL(blob)
+  };
+  recorder.start(250);vnStarting=false;button.disabled=false;button.textContent='⏹ Stop (25)';m.textContent='Recording… speak now';
+  vnT=setInterval(()=>{seconds++;button.textContent='⏹ Stop ('+Math.max(0,25-seconds)+')';if(seconds>=25&&recorder.state==='recording')recorder.stop()},1000)
+ }catch(e){
+  if(attempt!==vnAttempt){stream?.getTracks().forEach(t=>t.stop());return}
+  stream?.getTracks().forEach(t=>t.stop());vnStream=null;vnStarting=false;button.disabled=false;button.textContent='🎙 Record voice note';
+  const messages={NotFoundError:'No microphone was found on this device.',NotAllowedError:'Microphone access was denied. Allow microphone permission in browser or app settings, then try again.',SecurityError:'Microphone access is blocked here. Open the app over HTTPS or in the installed Android app.',NotReadableError:'The microphone is busy or unavailable. Close other apps using it, then try again.',NotSupportedError:'This browser cannot record audio in a supported format. Update the browser and try again.'};
+  m.textContent=messages[e.name]||'Could not start recording ('+(e.name||'unknown error')+'). Check microphone permission and try again.'
+ }
+};
 // referral, schemes
-function refTo(l){return l==='red'?'Go to the nearest PHC or hospital now. Call 108.':l==='amber'?'Visit the PHC or CHO within 24 hours.':'Home care with ASHA follow-up. Visit the sub-centre if not better in 2 days.'}
+function refTo(l){return l==='red'?'Go to the nearest PHC or hospital now. Call 108.':(l==='yellow'||l==='amber')?'Visit the PHC or CHO within 24 hours.':'Home care with ASHA follow-up. Visit the sub-centre if not better in 2 days.'}
 const SCH={'Pregnant woman':[['108 free ambulance','Call 108 for transport to a government facility.'],['JSY / JSSK','Support for delivery at a government facility, with free delivery care and transport. Ask your ASHA what applies.'],['Mamata (Odisha)','Cash support for pregnant and nursing mothers. Ask your ASHA for current rules.']],'Child under 5':[['Free vaccines (UIP)','Given at the sub-centre or Anganwadi on immunization days. See the Mother tab for dates.'],['Anganwadi nutrition','Take-home ration and growth checks. Ask your Anganwadi worker.']],'Age 70 or above':[['Ayushman Bharat PM-JAY','Senior citizens aged 70+ may be eligible for health cover. Check at a PHC or with an Ayushman Mitra.']],'Any family':[['Ayushman Bharat PM-JAY','Hospital cover for eligible families. Check eligibility at a PHC or with an Ayushman Mitra. Carry Aadhaar and a ration card.'],['State health scheme','Odisha also runs its own health cover. Ask the ASHA or PHC which one applies now.']],'TB patient':[['Ni-kshay Poshan Yojana','Nutrition support during TB treatment. Ask the TB health worker.']]};
 $('#schc').innerHTML=Object.keys(SCH).map(k=>`<button class="chip" data-sc="${esc(k)}">${esc(k)}</button>`).join('');
 $('#schc').onclick=e=>{const b=e.target.closest('[data-sc]');if(b)$('#scho').innerHTML=SCH[b.dataset.sc].map(x=>`<div class="card"><b>${esc(x[0])}</b><div class="mu">${esc(x[1])}</div></div>`).join('')};
@@ -465,7 +571,7 @@ function speak(t){if(!window.speechSynthesis||!t)return;speechSynthesis.cancel()
 $('#say').onclick=()=>speak($('#sout').innerText);$('#say2').onclick=()=>speak($('#pre').innerText);
 // keypad-phone demo
 const IQ={en:['Do you have fever?','Do you have loose motions?','Is there trouble breathing?','Is there a pregnancy problem or bleeding?','Chest pain, fainting or fits?'],hi:['बुखार है?','दस्त हो रहे हैं?','सांस लेने में तकलीफ है?','गर्भावस्था में समस्या या खून बह रहा है?','सीने में दर्द, बेहोशी या दौरा है?'],or:['ଜ୍ୱର ଅଛି କି?','ଝାଡ଼ା ହେଉଛି କି?','ଶ୍ୱାସ ନେବାରେ କଷ୍ଟ ହେଉଛି କି?','ଗର୍ଭାବସ୍ଥାରେ ସମସ୍ୟା କିମ୍ବା ରକ୍ତସ୍ରାବ ଅଛି କି?','ଛାତି ଯନ୍ତ୍ରଣା, ମୂର୍ଚ୍ଛା କିମ୍ବା ଝଟକା ଅଛି କି?']};
-const IR={en:{red:'Go to the PHC now or call 108.',amber:'Visit the PHC within a day. Drink ORS.',green:'Rest and drink fluids. If worse, call your ASHA.'},hi:{red:'अभी स्वास्थ्य केंद्र जाएँ या 108 पर कॉल करें।',amber:'एक दिन के भीतर स्वास्थ्य केंद्र जाएँ। ORS पिएँ।',green:'आराम करें, पानी पिएँ। तबीयत बिगड़े तो आशा को बुलाएँ।'},or:{red:'ବର୍ତ୍ତମାନ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରକୁ ଯାଆନ୍ତୁ କିମ୍ବା 108 କୁ ଫୋନ୍ କରନ୍ତୁ।',amber:'ଗୋଟିଏ ଦିନ ଭିତରେ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରକୁ ଯାଆନ୍ତୁ। ORS ପିଅନ୍ତୁ।',green:'ବିଶ୍ରାମ ନିଅନ୍ତୁ, ପାଣି ପିଅନ୍ତୁ। ଖରାପ ହେଲେ ଆଶାକୁ ଡାକନ୍ତୁ।'}};
+const IR={en:{red:'Go to the PHC now or call 108.',yellow:'Visit the PHC within a day. Drink ORS.',amber:'Visit the PHC within a day. Drink ORS.',green:'Rest and drink fluids. If worse, call your ASHA.'},hi:{red:'अभी स्वास्थ्य केंद्र जाएँ या 108 पर कॉल करें।',yellow:'एक दिन के भीतर स्वास्थ्य केंद्र जाएँ। ORS पिएँ।',amber:'एक दिन के भीतर स्वास्थ्य केंद्र जाएँ। ORS पिएँ।',green:'आराम करें, पानी पिएँ। तबीयत बिगड़े तो आशा को बुलाएँ।'},or:{red:'ବର୍ତ୍ତମାନ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରକୁ ଯାଆନ୍ତୁ କିମ୍ବା 108 କୁ ଫୋନ୍ କରନ୍ତୁ।',yellow:'ଗୋଟିଏ ଦିନ ଭିତରେ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରକୁ ଯାଆନ୍ତୁ। ORS ପିଅନ୍ତୁ।',amber:'ଗୋଟିଏ ଦିନ ଭିତରେ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରକୁ ଯାଆନ୍ତୁ। ORS ପିଅନ୍ତୁ।',green:'ବିଶ୍ରାମ ନିଅନ୍ତୁ, ପାଣି ପିଅନ୍ତୁ। ଖରାପ ହେଲେ ଆଶାକୁ ଡାକନ୍ତୁ।'}};
 let IL=LS.g('ivl','or'),iq=0,ia=[];
 function speakL(t,l){if(!window.speechSynthesis||!t)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l;speechSynthesis.speak(u)}
 function ivs(t,key){const a=LS.g('ivrA',{})[IL+'_'+key],n=$('#ivnote');
@@ -475,13 +581,13 @@ function ivs(t,key){const a=LS.g('ivrA',{})[IL+'_'+key],n=$('#ivnote');
  if(vs.length&&!vs.some(v=>v.lang&&v.lang.toLowerCase().replace('_','-').startsWith(l.slice(0,2)))){n.textContent=IL==='or'?'No Odia voice on this phone. Record Odia prompts below, or install Odia text-to-speech.':'No voice for this language on this phone.';return}
  n.textContent='';speakL(t,l)}
 function ivr(){const q=IQ[IL]||IQ.en,el=$('#ivrbox');
- if(iq>=q.length){const[f,l,b,p,c]=ia,lv=(b||p||c)?'red':(f&&l)?'amber':'green',t=(IR[IL]||IR.en)[lv];el.innerHTML=`<div class="card"><span class="t ${lv}">${lv.toUpperCase()}</span><p style="font-size:1.4em">${esc(t)}</p>${lv==='red'?'<a class="btn s" href="tel:108">📞 Call 108</a> ':''}<button class="btn s o" id="ivrre">Start again</button></div>`;ivs(t,'r_'+lv);return}
+ if(iq>=q.length){const[f,l,b,p,c]=ia,lv=(b||p||c)?'red':(f&&l)?'yellow':'green',t=(IR[IL]||IR.en)[lv];el.innerHTML=`<div class="card"><span class="t ${lv}">${lv.toUpperCase()}</span><p style="font-size:1.4em">${esc(t)}</p>${lv==='red'?'<a class="btn s" href="tel:108">📞 Call 108</a> ':''}<button class="btn s o" id="ivrre">Start again</button></div>`;ivs(t,'r_'+lv);return}
  const t=q[iq];el.innerHTML=`<div class="card" style="text-align:center"><div class="mu">${iq+1} / ${q.length}</div><p style="font-size:1.5em">${esc(t)}</p><div class="row"><button class="btn" data-k="1">1 · ${IL==='or'?'ହଁ':IL==='hi'?'हाँ':'Yes'}</button><button class="btn o" data-k="0">2 · ${IL==='or'?'ନା':IL==='hi'?'नहीं':'No'}</button></div><button class="btn s o" data-rep="1">🔊</button></div>`;ivs(t,'q'+iq)}
 $('#ivl').value=IL;$('#ivl').onchange=e=>{IL=e.target.value;LS.s('ivl',IL);iq=0;ia=[];ivr()};
 $('#ivrgo').onclick=()=>{iq=0;ia=[];go('ivr');ivr()};
 $('#ivrbox').onclick=e=>{const b=e.target.closest('[data-k]');if(b){ia.push(+b.dataset.k);iq++;ivr();return}if(e.target.closest('[data-rep]'))ivs((IQ[IL]||IQ.en)[iq],'q'+iq);if(e.target.id==='ivrre'){iq=0;ia=[];ivr()}};
-const IK=['q0','q1','q2','q3','q4','r_red','r_amber','r_green'];
-function ivrRecUI(){const A=LS.g('ivrA',{});$('#ivrrec').innerHTML=IK.map(k=>{const t=k[0]==='q'?IQ.or[+k[1]]:IR.or[k.slice(2)],a=A['or_'+k];return`<div class="card"><div style="font-size:1.1em">${esc(t)}</div><button class="btn s" data-rk="${k}" type="button">🎙 Record</button>${a?` <button class="btn s o" data-pk="${k}" type="button">▶ Play</button> <button class="btn s o" data-dk="${k}" type="button">Remove</button> ✓`:''}</div>`}).join('')}
+const IK=['q0','q1','q2','q3','q4','r_red','r_yellow','r_green'];
+function ivrRecUI(){const A=LS.g('ivrA',{});$('#ivrrec').innerHTML=IK.map(k=>{const t=k[0]==='q'?IQ.or[+k[1]]:(IR.or[k.slice(2)]||IR.or.amber),a=A['or_'+k]||(k==='r_yellow'?A['or_r_amber']:null);return`<div class="card"><div style="font-size:1.1em">${esc(t)}</div><button class="btn s" data-rk="${k}" type="button">🎙 Record</button>${a?` <button class="btn s o" data-pk="${k}" type="button">▶ Play</button> <button class="btn s o" data-dk="${k}" type="button">Remove</button> ✓`:''}</div>`}).join('')}
 $('#ivrrec').onclick=async e=>{const r=e.target.closest('[data-rk]'),p=e.target.closest('[data-pk]'),d=e.target.closest('[data-dk]'),A=LS.g('ivrA',{}),n=$('#ivnote');
  if(p){try{new Audio(A['or_'+p.dataset.pk]).play()}catch(x){}return}
  if(d){delete A['or_'+d.dataset.dk];LS.s('ivrA',A);ivrRecUI();return}
@@ -667,7 +773,7 @@ $('#cmic').onclick=()=>{if(!SR){$('#cwarn').innerHTML='<div class="alert">Voice 
 setTimeout(()=>{if(!sample)$('#cnote').textContent='Offline mode: symptom and medicine guidance is built into this app. Online AI responses require an internet connection and a supported host.'},3500);
 cq();
 function demoCases(){const n=Date.now(),H=36e5,D=(i,nm,a,v,sy,dg,t,tr,w,h)=>({id:'demo'+i,name:nm,age:a,village:v,sym:sy,danger:dg,temp:t,triage:tr,why:w,ts:n-h*H,status:'new',notes:'',demo:true});
-return[D(1,'Demo A',3,'Rampur',['Diarrhoea','Vomiting','Fever'],[],38.6,'amber',['High fever','Child under 5'],4),D(2,'Demo B',28,'Rampur',['Diarrhoea','Weakness'],[],0,'green',[],20),D(3,'Demo C',45,'Rampur',['Diarrhoea','Vomiting'],['Cannot drink'],0,'red',['Danger sign: Cannot drink'],10),D(4,'Demo D',7,'Rampur',['Diarrhoea'],[],0,'green',[],40),D(5,'Demo E',34,'Kotra',['Fever','Headache','Body pain'],[],38.9,'amber',['High fever','3 or more symptoms'],8),D(6,'Demo F',26,'Dhanipali',['Pregnancy issue'],['Heavy bleeding'],0,'red',['Danger sign: Heavy bleeding'],6),D(7,'Demo G',60,'Jamda',['Cough'],[],0,'green',[],50)].map((c,i)=>i===1||i===3?{...c,status:'answered',advice:'Drink ORS and rest. Visit the PHC if not better.',answeredAt:c.ts+(i===1?1.5:3.5)*H}:c)}
+return[D(1,'Demo A',3,'Rampur',['Diarrhoea','Vomiting','Fever'],[],38.6,'yellow',['High fever','Child under 5'],4),D(2,'Demo B',28,'Rampur',['Diarrhoea','Weakness'],[],0,'green',[],20),D(3,'Demo C',45,'Rampur',['Diarrhoea','Vomiting'],['Cannot drink'],0,'red',['Danger sign: Cannot drink'],10),D(4,'Demo D',7,'Rampur',['Diarrhoea'],[],0,'green',[],40),D(5,'Demo E',34,'Kotra',['Fever','Headache','Body pain'],[],38.9,'yellow',['High fever','3 or more symptoms'],8),D(6,'Demo F',26,'Dhanipali',['Pregnancy issue'],['Heavy bleeding'],0,'red',['Danger sign: Heavy bleeding'],6),D(7,'Demo G',60,'Jamda',['Cough'],[],0,'green',[],50)].map((c,i)=>i===1||i===3?{...c,status:'answered',advice:'Drink ORS and rest. Visit the PHC if not better.',answeredAt:c.ts+(i===1?1.5:3.5)*H}:c)}
 function fb(){const saved=[...LS.g('cachedCases',[]),...LS.g('q',[])];cases=demoCases().concat([...new Map(saved.filter(c=>c&&c.id).map(c=>[c.id,c])).values()]);doctor();district();mine();paint()}
 setTimeout(()=>{if(!db)fb()},2500);
 
@@ -676,8 +782,8 @@ TX.hi.Household='परिवार';TX.or.Household='ପରିବାର';TX.hi.
 const HS=new Set(),HD=new Set();let hh=[],hk=0;
 function hchips(id,arr,set,cls){$(id).innerHTML=arr.map(x=>`<button type="button" class="chip ${cls}" data-x="${esc(x)}">${ICON[x]||''} ${esc(x)}</button>`).join('');$(id).onclick=e=>{const b=e.target.closest('[data-x]');if(!b)return;const k=b.dataset.x;set.has(k)?set.delete(k):set.add(k);b.classList.toggle('sel')}}
 hchips('#hh_s',SY,HS,'');hchips('#hh_d',DG,HD,'d');
-function hhList(){const l=hh.slice().sort((a,b)=>ord[a.t.level]-ord[b.t.level]),n=x=>hh.filter(m=>m.t.level===x).length;
- $('#hh_l').innerHTML=hh.length?'<div class="card"><b>Visit order</b> <span class="mu">'+n('red')+' red · '+n('amber')+' amber · '+n('green')+' green</span></div>'+l.map(m=>`<div class="card">${tag(m.t.level)} <b>${esc(m.name)}</b>, ${esc(m.age||'?')} yrs<div class="mu">${esc(m.sym.concat(m.danger).join(', '))}</div><div class="mu">➡ ${esc(refTo(m.t.level))}</div><button class="btn s o" data-hr="${m.k}" type="button">Remove</button></div>`).join(''):''}
+function hhList(){const l=hh.slice().sort((a,b)=>ord[a.t.level]-ord[b.t.level]),n=x=>hh.filter(m=>(m.t.level===x||(x==='yellow'&&m.t.level==='amber'))).length;
+ $('#hh_l').innerHTML=hh.length?'<div class="card"><b>Visit order</b> <span class="mu">'+n('red')+' red · '+n('yellow')+' yellow · '+n('green')+' green</span></div>'+l.map(m=>`<div class="card">${tag(m.t.level)} <b>${esc(m.name)}</b>, ${esc(m.age||'?')} yrs<div class="mu">${esc(m.sym.concat(m.danger).join(', '))}</div><div class="mu">➡ ${esc(refTo(m.t.level))}</div><button class="btn s o" data-hr="${m.k}" type="button">Remove</button></div>`).join(''):''}
 $('#hh_add').onclick=()=>{const m=$('#hh_m'),c={name:$('#hh_n').value.trim(),age:+$('#hh_a').value||0,temp:+$('#hh_t').value||0,sym:[...HS],danger:[...HD]};
  if(!c.name||(!c.sym.length&&!c.danger.length)){m.textContent='Add a name and at least one symptom.';return}
  hh.push({...c,k:'m'+(++hk),t:triage(c)});HS.clear();HD.clear();$$('#hh_s .sel,#hh_d .sel').forEach(x=>x.classList.remove('sel'));['hh_n','hh_a','hh_t'].forEach(i=>$('#'+i).value='');m.textContent='Added ✓';hhList()};
@@ -720,18 +826,28 @@ function authMessage(text,isError=false){authStatus.textContent=text;authStatus.
 $('#authForm').onsubmit=e=>{
  e.preventDefault();
  if($('#authOtp').value!=='123456'){authMessage('Incorrect demo code. Try again.',true);$('#authOtp').select();return}
- const profile=LS.g('userProfile',{name:'',phone:''});
- const name=$('#authName').value.trim(),phone=$('#authPhone').value.trim();
- if(name)profile.name=name;
- if(phone)profile.phone=phone;
- LS.s('userProfile',profile);
- $('#userName').value=profile.name||'';
- $('#userPhone').value=profile.phone||'';
- refreshUserLabel();
- setRole($('#authRole').value);
  document.body.classList.remove('auth-required');
+ try{
+  const profile=LS.g('userProfile',{name:'',phone:''});
+  const name=$('#authName').value.trim(),phone=$('#authPhone').value.trim();
+  if(name)profile.name=name;
+  if(phone)profile.phone=phone;
+  LS.s('userProfile',profile);
+  $('#userName').value=profile.name||'';
+  $('#userPhone').value=profile.phone||'';
+  refreshUserLabel();
+  setRole($('#authRole').value);
+ }catch(err){console.error(err)}
  authMessage('Demo opened. This code does not verify your identity.')
 };
+function doSignOut(){
+ document.body.classList.add('auth-required');
+ const um=$('#userMenu');if(um)um.open=false;
+ const otp=$('#authOtp');if(otp){otp.value='';otp.focus()}
+ authMessage('Signed out. Enter demo code 123456 to open.');
+}
+$('#userSignOut')?.addEventListener('click',doSignOut);
+$('#authSignOut')?.addEventListener('click',doSignOut);
 </script>
 <script>
 let btPeer=null,btIncoming=null;

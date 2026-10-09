@@ -34,6 +34,8 @@ import android.os.ParcelUuid;
 import android.util.Base64;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
+import android.webkit.PermissionRequest;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -78,6 +80,8 @@ public final class MainActivity extends Activity {
     private WebView webView;
     private WebViewAssetLoader assetLoader;
     private BleTransfer ble;
+    private static final int REQUEST_AUDIO_PERMISSION = 11;
+    private PermissionRequest pendingAudioRequest;
 
     @Override
     public void onCreate(Bundle state) {
@@ -119,6 +123,17 @@ public final class MainActivity extends Activity {
                 return true;
             }
         });
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onPermissionRequest(PermissionRequest request) {
+                runOnUiThread(() -> handleWebPermissionRequest(request));
+            }
+
+            @Override
+            public void onPermissionRequestCanceled(PermissionRequest request) {
+                if (pendingAudioRequest == request) pendingAudioRequest = null;
+            }
+        });
         setContentView(webView);
         ble = new BleTransfer(this);
         if (WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {
@@ -142,6 +157,23 @@ public final class MainActivity extends Activity {
                 && "https".equals(uri.getScheme())
                 && ASSET_HOST.equals(uri.getHost())
                 && (uri.getPath() == null || uri.getPath().isEmpty() || "/".equals(uri.getPath()));
+    }
+
+    private void handleWebPermissionRequest(PermissionRequest request) {
+        boolean requestsOnlyAudio = request.getResources().length == 1
+                && PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(request.getResources()[0]);
+        if (!requestsOnlyAudio || !isTrustedOrigin(Uri.parse(request.getOrigin().toString()))
+                || !isAppPage(webView.getUrl())) {
+            request.deny();
+            return;
+        }
+        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+            request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});
+            return;
+        }
+        if (pendingAudioRequest != null) pendingAudioRequest.deny();
+        pendingAudioRequest = request;
+        requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_AUDIO_PERMISSION);
     }
 
     private boolean isAppPage(Uri uri) {
@@ -299,11 +331,28 @@ public final class MainActivity extends Activity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_AUDIO_PERMISSION) {
+            PermissionRequest request = pendingAudioRequest;
+            pendingAudioRequest = null;
+            if (request == null) return;
+            boolean granted = grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+                    && isTrustedOrigin(Uri.parse(request.getOrigin().toString()))
+                    && isAppPage(webView == null ? null : webView.getUrl());
+            if (granted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});
+            else request.deny();
+            return;
+        }
         if (ble != null) ble.onPermissionsResult(requestCode, grantResults);
     }
 
     @Override
     protected void onDestroy() {
+        if (pendingAudioRequest != null) {
+            pendingAudioRequest.deny();
+            pendingAudioRequest = null;
+        }
         if (ble != null) ble.close();
         if (webView != null) {
             webView.destroy();

@@ -26,6 +26,8 @@ The app opens with a **demo-only local access screen**. Enter `123456` to open i
 
 The app requires the code again after a page/app restart. This local gate is not an account system and does not provide separate user identities or server-side access control. BLE itself transfers directly and needs no carrier or network once the app is accessible. Case drafts are saved to the on-device queue before any upload; queued cases remain available offline and retry with bounded backoff when connectivity returns. The page shows offline and low-network status, uses smaller upload batches on slow/save-data connections, and uses the bundled symptom/medicine guide instead of waiting for online AI on a weak connection. Up to 300 most recent shared cases are cached locally for offline viewing when the database provider supplies them. Online case sync and AI remain network-dependent; the bundled guide and saved local records work without a network.
 
+The Consult voice-note recorder requests Android's microphone permission only when recording starts. If prompted, allow microphone access; if it was denied, enable it for SwasthyaSetu in Android app settings and try again. The WebView grants audio capture only to the packaged app page.
+
 Login role choices are Patient, Doctor, and ASHA worker. The former District overview is available inside **Near me** for all three roles; Doctor navigation also includes **Near me**.
 
 ## Build and manual device checks
@@ -36,6 +38,7 @@ Open `android-app` in Android Studio, install Android SDK Platform 35, and use J
 2. On the receiver tap **Ready to receive**. On the sender scan, select the intended phone, select a consented case, and confirm. Compare the six-digit code in person on both screens; test a mismatch and cancel. On a match, approve on each phone.
 3. The sender sends only after both pairing approvals. The receiver must tap **Consent to decrypt and preview**, review the case, then separately Accept or Reject. Reject before decrypt and reject after preview; neither should create a record. Accept and check the local record says **Imported by Bluetooth**.
 4. Try a case without `shareConsent === true`, denied permissions, disabled Bluetooth, unsupported peripheral advertising, weak MTU/oversized data, and loss of range. Confirm failure is visible and no unaccepted record is stored.
-5. Generate an SMS and verify the unencrypted warning is visible immediately above the generated text and the action is labeled **Open unencrypted SMS**.
+5. In Consult, tap **Record voice note**, allow microphone permission, record a short message, stop, and play it back before saving the case.
+6. Generate an SMS and verify the unencrypted warning is visible immediately above the generated text and the action is labeled **Open unencrypted SMS**.
 
 No physical-device, protocol interoperability, or hardware test is claimed. The cryptographic implementation requires independent security review and testing before production patient use.
